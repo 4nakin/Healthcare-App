@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">101 Years</string>
+    <string name="title_exerciseitem_detail">ExerciseItem Detail</string>
+    <string name="app_firstname">101</string>
+    <string name="app_secondname">Years</string>
+    <string name="first_name">FIRST NAME</string>
+    <string name="last_name">LAST NAME</string>
+    <string name="email">EMAIL ADDRESS</string>
+    <string name="reenter_password">RE-ENTER PASSWORD</string>
+    <string name="username">USERNAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="login">LOGIN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="new_user">New User?</string>
+    <string name="exsisting_user">Exsisting User?</string>
+    <string name="send_mail">SEND MAIL</string>
+    <string name="settings">Settings</string>
+    <string name="my_account">My Account</string>
+    <string name="logout">Logout</string>
+    <string name="yoga_btn">Yoga</string>
+    <string name="results_btn">Results</string>
+    <string name="account_btn">Account</string>
+    <string name="settings_btn">Settings</string>
+    <string name="view_as">View As</string>
+    <string name="list">List</string>
+    <string name="tiles">Tiles</string>
+    <string name="classic">Classic</string>
+    <string name="follow_us">Contact Us</string>
+    <string name="about">About</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="set_date">Set Age</string>
+    <string name="change_password">Change Password</string>
+    <string name="questionnaire">Questionnaire</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="na">NA</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="cancel">Cancel</string>
+    <string name="upgrade">Upgrade</string>
+    <string name="my_courses">My Courses</string>
+    <string name="statistics">Statistics</string>
+    <string name="upgrade_details">Upgrade your subscription to get access to new exercises to achieve those 101 Years.</string>
+    <string name="questionnaire_detials">We would like you to answer a couple of questions to understand and help you achieve your 101 Years.</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</string>
+
+</resources>

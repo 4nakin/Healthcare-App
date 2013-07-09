@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/slider_bg"
+            android:orientation="horizontal" >
+            
+            <RelativeLayout 
+                android:layout_width="96dp"
+	            android:layout_height="96dp">
+	            
+                <com.example.healthcareapp.widgets.RadialProgressView
+                    android:id="@+id/profile_age_progress_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	                android:gravity="center"
+	                android:orientation="vertical" >
+	
+	                <TextView
+	                    android:id="@+id/profile_user_age"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:fontFamily="sans-serif-condensed"
+	                    android:text="@string/na"
+	                    android:textColor="@color/pink_dark"
+	                    android:textSize="36sp" />
+	
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:fontFamily="sans-serif-light"
+	                    android:text="@string/app_secondname"
+	                    android:textColor="@color/app_dark_gray"
+	                    android:textSize="18sp" />
+	            </LinearLayout>
+			</RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="right"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/profile_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/na"
+                    android:textColor="@color/app_dark_gray"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/profile_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/na"
+                    android:textColor="@color/pink_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/profile_edit"
+                    style="@style/ClickableTextButtonStyle"
+                    android:drawableLeft="@drawable/ic_action_edit"
+                    android:text="@string/update_profile"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/profile_update_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/slider_bg"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/upgrade_details"
+                android:textColor="@color/pink_dark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/profile_upgrade_profile"
+                style="@style/ClickableTextButtonStyle"
+                android:text="@string/upgrade"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/profile_questionnaire_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/slider_bg"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/questionnaire_detials"
+                android:textColor="@color/app_light_gray"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/profile_questionnaire"
+                style="@style/ClickableTextButtonStyle"
+                android:text="@string/questionnaire"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/profile_change_password"
+            style="@style/PositiveButtonStyle"
+            android:text="@string/change_password" />
+
+        <Button
+            android:id="@+id/profile_logout"
+            style="@style/NegativeButtonStyle"
+            android:text="@string/logout" />
+    </LinearLayout>
+
+</ScrollView>
