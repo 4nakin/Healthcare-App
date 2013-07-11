@@ -3,4 +3,5 @@
     <dimen name="main_menu_button_size">96dp</dimen>
     <dimen name="slidingmenu_offset">60dp</dimen>
     <dimen name="shadow_width">8dp</dimen>
+    <dimen name="list_view_padding">10dp</dimen>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="main_menu_button_size">128dp</dimen>
-    <dimen name="slidingmenu_offset">60dp</dimen>
+    <dimen name="slidingmenu_offset">200dp</dimen>
     <dimen name="shadow_width">8dp</dimen>
 </resources>

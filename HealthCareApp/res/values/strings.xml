@@ -21,10 +21,6 @@
     <string name="settings">Settings</string>
     <string name="my_account">My Account</string>
     <string name="logout">Logout</string>
-    <string name="yoga_btn">Yoga</string>
-    <string name="results_btn">Results</string>
-    <string name="account_btn">Account</string>
-    <string name="settings_btn">Settings</string>
     <string name="view_as">View As</string>
     <string name="list">List</string>
     <string name="tiles">Tiles</string>
@@ -43,8 +39,40 @@
     <string name="upgrade">Upgrade</string>
     <string name="my_courses">My Courses</string>
     <string name="statistics">Statistics</string>
+    <string name="born_on">Born on</string>
+    <string name="current_password">CURRENT PASSWORD</string>
+    <string name="new_password">NEW PASSWORD</string>
+    <string name="new_re_password">RE-ENTER NEW PASSWORD</string>
     <string name="upgrade_details">Upgrade your subscription to get access to new exercises to achieve those 101 Years.</string>
     <string name="questionnaire_detials">We would like you to answer a couple of questions to understand and help you achieve your 101 Years.</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</string>
-
+    
+    <string name="msg_changes_saved">Profile updated successfully.</string>
+    <string name="msg_registration_failed">Registration failed. Please try again.</string>
+    <string name="msg_registration_empty_field">Please fill up all the fields.</string>
+    <string name="msg_registration_password_mismatch">Password and Re-Enter Password fields donot match.</string>
+    <string name="msg_login_empty_fields">Please you username and password.</string>
+    <string name="msg_login_wrong_credential">The entered username or password donot match our records.</string>
+    <string name="msg_login_failed">Authentication failed.</string>
+    
+    <string-array name="months">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Aug</item>
+        <item>Sep</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+    </string-array>
+    
+    <string-array name="statictics_filter">
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Overall</item>
+    </string-array>
 </resources>

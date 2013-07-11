@@ -4,11 +4,30 @@
     android:layout_height="match_parent" >
 
     <LinearLayout
-        android:layout_above="@+id/about_footer"
+        android:id="@+id/about_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" >
+
+        <TextView
+            style="@style/AboutHeaderTextStyle"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/app_firstname"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/AboutHeaderTextStyle"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/app_secondname" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/about_footer"
+        android:layout_below="@+id/about_header"
         android:divider="?android:dividerHorizontal"
-        android:dividerPadding="10dp"
+        android:dividerPadding="20dp"
         android:orientation="vertical"
         android:showDividers="middle" >
 
@@ -21,15 +40,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="@string/lorem_ipsum"
                 android:textColor="@color/app_light_gray"
                 android:textSize="14sp" />
         </ScrollView>
-        
-        <Space 
+
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="10dp"/>
+            android:layout_height="10dp" />
     </LinearLayout>
 
     <RelativeLayout
@@ -40,13 +60,31 @@
         android:background="@drawable/list_selector_bg" >
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/about_footer_text"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"
             android:padding="10dp"
             android:text="@string/follow_us"
             android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="3dp"
+            android:layout_toRightOf="@+id/about_footer_text"
+            android:gravity="right" >
+
+            <ImageButton
+                android:id="@+id/about_mail_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_positive_btn"
+                android:src="@drawable/ic_action_mail" />
+        </LinearLayout>
     </RelativeLayout>
 
 </RelativeLayout>

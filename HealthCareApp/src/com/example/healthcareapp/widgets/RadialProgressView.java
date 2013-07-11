@@ -11,8 +11,8 @@ import android.view.View;
 
 public class RadialProgressView extends View {
 
-	private int mMaxValue = 101;
-	private int mCurrentValue = 23;
+	private int mMaxValue = 1;
+	private int mCurrentValue = 0;
 	private Paint mViewPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 	private int mCenterColor = Color.WHITE;
 	private int mBgColor = Color.parseColor("#20000000");

@@ -2,6 +2,7 @@ package com.example.healthcareapp.fragments;
 
 import java.util.ArrayList;
 
+import com.example.healthcareapp.R;
 import com.example.healthcareapp.adapter.ExerciseListAdapter;
 import com.example.healthcareapp.interfaces.OnExerciseListItemSelected;
 import com.example.healthcareapp.model.ExerciseItem;
@@ -55,6 +56,8 @@ public class ExerciseListFragment extends ListFragment {
 					.getInt(STATE_ACTIVATED_POSITION));
 		}
 		getListView().setCacheColorHint(Color.TRANSPARENT);
+		getListView().setPadding((int) getResources().getDimension(R.dimen.list_view_padding), 0, 
+				(int) getResources().getDimension(R.dimen.list_view_padding), 0);
 	}
 
 	@Override

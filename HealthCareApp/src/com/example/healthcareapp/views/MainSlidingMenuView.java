@@ -2,10 +2,16 @@ package com.example.healthcareapp.views;
 
 import java.util.ArrayList;
 
+import org.joda.time.DateMidnight;
+import org.joda.time.DateTime;
+import org.joda.time.Years;
+
 import com.example.healthcareapp.R;
 import com.example.healthcareapp.adapter.MainMenuListAdapter;
 import com.example.healthcareapp.interfaces.OnMainSlidingMenuItemSelected;
 import com.example.healthcareapp.model.MainMenuListItem;
+import com.example.healthcareapp.util.AppPreferences;
+import com.example.healthcareapp.widgets.RadialProgressView;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -18,15 +24,18 @@ import android.widget.TextView;
 
 public class MainSlidingMenuView {
 	
-	private TextView mUsername;
+	private TextView mAge, mUsername, mGender;
+	private RadialProgressView mProgressView;
 	private View mViewHolder;
 	private ListView mMainListView;
 	private MainMenuListAdapter mAdapter;
 	private ArrayList<MainMenuListItem> mData = new ArrayList<MainMenuListItem>();
 	private OnMainSlidingMenuItemSelected mCallback;
+	private AppPreferences mPrefs;
 
 	public MainSlidingMenuView(Context context) {
 		mAdapter = new MainMenuListAdapter(context);
+		mPrefs = new AppPreferences(context);
 		mData.add(new MainMenuListItem(R.drawable.ic_action_courses, context.getString(R.string.my_courses)));
 		mData.add(new MainMenuListItem(R.drawable.ic_action_statistics, context.getString(R.string.statistics)));
 		mData.add(new MainMenuListItem(R.drawable.ic_action_settings, context.getString(R.string.settings)));
@@ -35,12 +44,12 @@ public class MainSlidingMenuView {
 		
 		mViewHolder = LayoutInflater.from(context).inflate(R.layout.view_sliding_menu_main, null);
 		mMainListView = (ListView) mViewHolder.findViewById(R.id.sliding_menu_main_menu_list);
+		mAge = (TextView) mViewHolder.findViewById(R.id.sliding_menu_main_menu_user_age);
 		mUsername = (TextView) mViewHolder.findViewById(R.id.sliding_menu_main_menu_user);
-		
-		mUsername.setText("Arindam Nath");
-		mMainListView.setAdapter(mAdapter);
-		mMainListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-		mMainListView.setItemChecked(0, true);
+		mGender = (TextView) mViewHolder.findViewById(R.id.sliding_menu_main_menu_user_gender);
+		mProgressView = (RadialProgressView) mViewHolder.findViewById(R.id.sliding_menu_main_menu_progress_view);
+		mProgressView.setMaxValue(101);	
+		initView(context);
 		
 		mViewHolder.findViewById(R.id.sliding_menu_main_menu_edit_profile).setOnClickListener(new OnClickListener() {
 			@Override
@@ -82,5 +91,30 @@ public class MainSlidingMenuView {
 	 */
 	public void setOnMainSlidingMenuItemSelected(OnMainSlidingMenuItemSelected mCallback) {
 		this.mCallback = mCallback;
-	}	
+	}
+	
+	public void initView(Context context) {
+		updateUserInfo(context);
+		mMainListView.setAdapter(mAdapter);
+		mMainListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+		mMainListView.setItemChecked(0, true);
+	}
+	
+	public int getAge(int year, int month, int day) {
+		DateMidnight birthdate = new DateMidnight(year, month+1, day);
+		DateTime now = new DateTime();
+		Years age = Years.yearsBetween(birthdate, now);
+		return age.getYears();
+	}
+	
+	public void updateUserInfo(Context context) {
+		if(mPrefs.getFirstname() != null && mPrefs.getLastname() != null)
+			mUsername.setText(mPrefs.getFirstname() + " " + mPrefs.getLastname());
+		if(mPrefs.getDOBYear() != -1 && mPrefs.getDOBMonth() != -1 && mPrefs.getDOBDay() != -1) {
+			mAge.setText(String.valueOf(getAge(mPrefs.getDOBYear(), mPrefs.getDOBMonth(), mPrefs.getDOBDay())));
+			mProgressView.setCurrentValue(getAge(mPrefs.getDOBYear(), mPrefs.getDOBMonth(), mPrefs.getDOBDay()));
+		}
+		if(mPrefs.getGender() != -1) 
+			mGender.setText((mPrefs.getGender() == 0) ? context.getString(R.string.male) : context.getString(R.string.female));
+	}
 }

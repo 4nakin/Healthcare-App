@@ -10,6 +10,7 @@
     
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -31,8 +32,8 @@
             android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"/>
         
         <activity 
-            android:name="com.example.healthcareapp.UpdateProfileActivity" android:label="@string/update_profile"/>
-        
+            android:name="com.example.healthcareapp.SettingsDetailsActivity"/>
+                
         <activity 
             android:name="com.example.healthcareapp.MainActivity"
             android:icon="@drawable/ic_action_sliding_menu"/>

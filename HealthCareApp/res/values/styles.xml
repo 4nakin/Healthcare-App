@@ -29,6 +29,13 @@
         <item name="android:textSize">50sp</item>
     </style>
     
+    <style name="AboutHeaderTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app_light_gray</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+    
     <style name="LoginEditTextStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -56,7 +63,7 @@
         <item name="android:background">@drawable/selector_positive_btn</item>
         <item name="android:fontFamily">sans-serif-condensed</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
     </style>
     
     <style name="NegativeButtonStyle">
@@ -66,7 +73,7 @@
         <item name="android:background">@drawable/selector_negative_button</item>
         <item name="android:fontFamily">sans-serif-condensed</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
     </style>
     
     <style name="ClickableTextButtonStyle">

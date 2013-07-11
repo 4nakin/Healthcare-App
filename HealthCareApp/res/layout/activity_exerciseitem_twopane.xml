@@ -2,13 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    android:divider="?android:attr/dividerHorizontal"
+    android:baselineAligned="false"
     android:orientation="horizontal"
-    android:showDividers="middle"
-    tools:context=".ExerciseItemListActivity" 
-    android:background="@drawable/landing_page_bg">
+    tools:context=".ExerciseItemListActivity" >
 
     <!--
     This layout is a two-pane layout for the ExerciseItems
@@ -16,23 +12,20 @@
     res/values-sw600dp/refs.xml for an example of layout aliases
     that replace the single-pane version of the layout with
     this two-pane version.
-
-    For more on layout aliases, see:
-    http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
     -->
 
-    <fragment
-        android:id="@+id/exerciseitem_list"
-        android:name="com.example.healthcareapp.fragments.ExerciseListFragment"
+    <FrameLayout
+        android:id="@+id/main_container"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        tools:layout="@android:layout/list_content" />
-    
+        android:layout_weight="1" />
+
     <FrameLayout
         android:id="@+id/exerciseitem_detail_container"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="3" />
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/slider_bg" />
 
 </LinearLayout>

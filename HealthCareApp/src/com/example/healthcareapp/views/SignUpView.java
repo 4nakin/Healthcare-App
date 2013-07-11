@@ -1,37 +1,62 @@
 package com.example.healthcareapp.views;
 
+import com.example.healthcareapp.MainActivity;
 import com.example.healthcareapp.R;
+import com.example.healthcareapp.threads.RegisterUserTask;
 
-import android.content.Context;
+import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
-public class SignUpView {
+public class SignUpView implements RegisterUserTask.OnRegisterProcessCompletedListener {
 	
 	private ViewGroup mViewSignUpHolder, mViewSignUpFooterHolder;
-	@SuppressWarnings("unused")
-	private Context mContext;
+	private EditText mUsername, mFirstname, mLastname, mEmail, mPassword, mRePassword;
+	private Activity mActivity;
 
-	public SignUpView(final Context context, final LinearLayout container) {
-		mContext = context;
+	public SignUpView(final Activity activity, final LinearLayout container) {
+		mActivity = activity;
 		mViewSignUpHolder = (ViewGroup) LayoutInflater.from(
-				context).inflate(R.layout.layout_signup, container, false);
+				activity).inflate(R.layout.layout_signup, container, false);
 		mViewSignUpFooterHolder = (ViewGroup) LayoutInflater.from(
-				context).inflate(R.layout.layout_signup_footer, container, false);
+				activity).inflate(R.layout.layout_signup_footer, container, false);
+		
+		mUsername = (EditText) mViewSignUpHolder.findViewById(R.id.sign_up_username);
+		mFirstname = (EditText) mViewSignUpHolder.findViewById(R.id.sign_up_first_name);
+		mLastname = (EditText) mViewSignUpHolder.findViewById(R.id.sign_up_last_name);
+		mEmail = (EditText) mViewSignUpHolder.findViewById(R.id.sign_up_email);
+		mPassword = (EditText) mViewSignUpHolder.findViewById(R.id.sign_up_password);
+		mRePassword = (EditText) mViewSignUpHolder.findViewById(R.id.sign_up_re_enter_password);
+		
+		mViewSignUpHolder.findViewById(R.id.sign_up_procced_btn).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new RegisterUserTask(activity, SignUpView.this)
+					.execute(new EditText[] {mFirstname, mLastname, mUsername, mEmail, mPassword, mRePassword});
+			}
+		});
 		
 		mViewSignUpFooterHolder.findViewById(R.id.sign_up_exsisting_user).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				container.removeView(mViewSignUpFooterHolder);
 				container.removeView(mViewSignUpHolder);
-				new LoginView(context, container);
+				new LoginView(activity, container);
 			}
 		});
 		
 		container.addView(mViewSignUpHolder);
 		container.addView(mViewSignUpFooterHolder);
+	}
+	
+	@Override
+	public void onRegisterSuccessful() {
+		mActivity.startActivity(new Intent(mActivity, MainActivity.class));
+		mActivity.finish();
 	}
 }
