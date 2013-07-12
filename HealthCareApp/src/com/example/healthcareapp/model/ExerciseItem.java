@@ -55,7 +55,7 @@ public class ExerciseItem {
 	/**
 	 * @return the mExerciseDescription
 	 */
-	public String getmExerciseDescription() {
+	public String getExerciseDescription() {
 		return mExerciseDescription;
 	}
 

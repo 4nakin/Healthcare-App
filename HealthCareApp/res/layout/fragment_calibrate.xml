@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/slider_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:padding="3dp"
+            android:text="@string/calibrate_header_text"
+            android:textColor="@color/app_light_gray"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/calibrate_settings_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/calibrate_type"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <com.example.healthcareapp.widgets.RadialProgressView
+            android:id="@+id/calibrate_progress_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/calibrate_process_message_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="?android:selectableItemBackground"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:padding="55dp"
+            android:text="@string/msg_waiting_for_input"
+            android:textColor="@color/app_light_gray"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/calibrate_process_control_btn"
+        style="@style/PositiveButtonStyle"
+        android:text="@string/start" />
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.healthcareapp;
 
+import com.example.healthcareapp.fragments.CalibrateSettingsFragment;
 import com.example.healthcareapp.fragments.ChangePasswordFragment;
 import com.example.healthcareapp.interfaces.OnSettingsListItemSelected;
 
@@ -23,6 +24,9 @@ public class SettingsDetailsActivity extends FragmentActivity {
 		
 		switch(getIntent().getIntExtra(WHICH_SETTINGS, OnSettingsListItemSelected.SETTINGS_CALIBRATE)) {
 		case OnSettingsListItemSelected.SETTINGS_CALIBRATE:
+			getSupportFragmentManager().beginTransaction()
+				.replace(R.id.settings_details_fragment_holder, new CalibrateSettingsFragment())
+				.commit();
 			break;
 		case OnSettingsListItemSelected.SETTINGS_DELETE:
 			break;

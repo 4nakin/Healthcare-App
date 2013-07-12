@@ -50,7 +50,7 @@ public class ExerciseListAdapter extends BaseAdapter {
 			TextView mDescriptionText = (TextView) convertView.findViewById(R.id.exercise_description);
 			TextView mCountText = (TextView) convertView.findViewById(R.id.exercise_count);
 			mTitleText.setText(mData.get(position).getExerciseName());
-			mDescriptionText.setText(mData.get(position).getmExerciseDescription());
+			mDescriptionText.setText(mData.get(position).getExerciseDescription());
 			mCountText.setText(String.valueOf(position + 1));
 		}
 		return convertView;

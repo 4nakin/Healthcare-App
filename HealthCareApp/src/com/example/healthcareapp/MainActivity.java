@@ -1,6 +1,7 @@
 package com.example.healthcareapp;
 
 import com.example.healthcareapp.fragments.AboutFragment;
+import com.example.healthcareapp.fragments.CalibrateSettingsFragment;
 import com.example.healthcareapp.fragments.ChangePasswordFragment;
 import com.example.healthcareapp.fragments.ExerciseDetailFragment;
 import com.example.healthcareapp.fragments.ExerciseListFragment;
@@ -162,6 +163,12 @@ public class MainActivity extends FragmentActivity implements
 	public void onSettingsListItemClicked(int which, SettingsListItem data) {
 		switch (which) {
 		case OnSettingsListItemSelected.SETTINGS_CALIBRATE:
+			if (mTwoPane) 
+				getSupportFragmentManager().beginTransaction()
+					.replace(R.id.exerciseitem_detail_container, new CalibrateSettingsFragment())
+					.commit();
+			else
+				showSettingsDetails(which, data);
 			break;
 		case OnSettingsListItemSelected.SETTINGS_DELETE:
 			break;

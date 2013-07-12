@@ -16,7 +16,7 @@ public class RadialProgressView extends View {
 	private Paint mViewPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 	private int mCenterColor = Color.WHITE;
 	private int mBgColor = Color.parseColor("#20000000");
-	private int mProgressColor = getContext().getResources().getColor(android.R.color.holo_blue_bright);
+	private int mProgressColor = getContext().getResources().getColor(android.R.color.holo_blue_light);
 	private RectF mRadialScoreRect;
 	
 	private int mRadius = 0;
