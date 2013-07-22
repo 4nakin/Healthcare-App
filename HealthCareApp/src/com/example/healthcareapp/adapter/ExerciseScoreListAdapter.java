@@ -45,18 +45,26 @@ public class ExerciseScoreListAdapter extends BaseAdapter{
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+		final ViewHolder holder;
 		if (convertView == null) {
+			holder = new ViewHolder();
 			convertView = mInflater.inflate(R.layout.adapter_score_list, null);
-			TextView mTitleText = (TextView) convertView.findViewById(R.id.score_adapter_exercise_name);
-			TextView mScoreText = (TextView) convertView.findViewById(R.id.score_adapter_meter_value_text);
-			RadialProgressView mScoreMeter = (RadialProgressView) convertView.findViewById(R.id.score_adapter_meter);
-			mScoreMeter.setMaxValue(100);
-			
-			mTitleText.setText(mData.get(position).getName());
-			mScoreText.setText(String.valueOf(mData.get(position).getScore()));
-			mScoreMeter.setCurrentValue(mData.get(position).getScore());
-		}
+			holder.mTitleText = (TextView) convertView.findViewById(R.id.score_adapter_exercise_name);
+			holder.mScoreText = (TextView) convertView.findViewById(R.id.score_adapter_meter_value_text);
+			holder.mScoreMeter = (RadialProgressView) convertView.findViewById(R.id.score_adapter_meter);
+			convertView.setTag(holder);
+		} else 
+			holder = (ViewHolder) convertView.getTag();
+		
+		holder.mScoreMeter.setMaxValue(100);
+		holder.mTitleText.setText(mData.get(position).getName());
+		holder.mScoreText.setText(String.valueOf(mData.get(position).getScore()));
+		holder.mScoreMeter.setCurrentValue(mData.get(position).getScore());
 		return convertView;
 	}
 
+	static class ViewHolder {
+		TextView mTitleText, mScoreText;
+		RadialProgressView mScoreMeter;
+	}
 }

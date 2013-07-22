@@ -21,20 +21,19 @@ import com.example.healthcareapp.views.MainSlidingMenuView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 
 public class MainActivity extends FragmentActivity implements
 	OnExerciseListItemSelected, OnMainSlidingMenuItemSelected, OnSettingsListItemSelected {
 
-	/**
-	 * Whether or not the activity is in two-pane mode, i.e. running on a tablet
-	 * device.
-	 */
 	private boolean mTwoPane;
 	private MainSlidingMenuView menuView;
 	private SlidingMenu mAppMenu;
 	private AppPreferences mPrefs;
+	private int SELECTED_MENU_ITEM = -1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +41,6 @@ public class MainActivity extends FragmentActivity implements
 		setContentView(R.layout.activity_exerciseitem_list);
 		getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_action_bar_bg));
 		getActionBar().setHomeButtonEnabled(true);
-		getActionBar().setTitle(R.string.my_courses);
 		if (findViewById(R.id.exerciseitem_detail_container) != null) {
 			// The detail container view will be present only in the
 			// large-screen layouts (res/values-large and
@@ -53,7 +51,7 @@ public class MainActivity extends FragmentActivity implements
 		mPrefs = new AppPreferences(this);
 		menuView = new MainSlidingMenuView(this);
 		menuView.setOnMainSlidingMenuItemSelected(this);
-		// configure the SlidingMenu
+		/** Configure the SlidingMenu **/
 		mAppMenu = new SlidingMenu(this);
 		mAppMenu.setMode(SlidingMenu.LEFT);
 		mAppMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
@@ -70,10 +68,18 @@ public class MainActivity extends FragmentActivity implements
 				menuView.updateUserInfo(MainActivity.this);
 			}
 		});
-		/** Set the initial screen **/
-		getSupportFragmentManager().beginTransaction()
-			.replace(R.id.main_container, new ExerciseListFragment())
-			.commit();
+		/** Handle orientation changes here **/
+		if(savedInstanceState == null) {
+			/** Set the initial screen **/
+			SELECTED_MENU_ITEM = OnMainSlidingMenuItemSelected.COURSES;
+		} else {
+			if(savedInstanceState.getBoolean("isMenuShowing"))
+				mAppMenu.showMenu();
+			/** Set the last viewed screen before the orientation changed **/
+			SELECTED_MENU_ITEM = savedInstanceState.getInt("currentMenuSelection");
+			menuView.setListSelection(SELECTED_MENU_ITEM);
+		}
+		changeMainContainerView(SELECTED_MENU_ITEM);
 	}
 	
 	@Override
@@ -114,48 +120,8 @@ public class MainActivity extends FragmentActivity implements
 
 	@Override
 	public void OnMenuItemSelected(int which) {
-		switch (which) {
-		case OnMainSlidingMenuItemSelected.EDIT_PROFILE:
-			getActionBar().setTitle(R.string.my_account);
-			if(findViewById(R.id.exerciseitem_detail_container) != null)
-				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.GONE);
-			getSupportFragmentManager().beginTransaction()
-				.replace(R.id.main_container, new ProfileFragment())
-				.commit();
-			break;
-		case OnMainSlidingMenuItemSelected.ABOUT:
-			getActionBar().setTitle(R.string.about);
-			if(findViewById(R.id.exerciseitem_detail_container) != null)
-				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.GONE);
-			getSupportFragmentManager().beginTransaction()
-				.replace(R.id.main_container, new AboutFragment())
-				.commit();
-			break;
-		case OnMainSlidingMenuItemSelected.COURSES:
-			getActionBar().setTitle(R.string.my_courses);
-			if(findViewById(R.id.exerciseitem_detail_container) != null)
-				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.VISIBLE);
-			getSupportFragmentManager().beginTransaction()
-				.replace(R.id.main_container, new ExerciseListFragment())
-				.commit();
-			break;
-		case OnMainSlidingMenuItemSelected.SETTINGS:
-			getActionBar().setTitle(R.string.settings);
-			if(findViewById(R.id.exerciseitem_detail_container) != null)
-				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.VISIBLE);
-			getSupportFragmentManager().beginTransaction()
-				.replace(R.id.main_container, new SettingsFragment())
-				.commit();
-			break;
-		case OnMainSlidingMenuItemSelected.STATISTICS:
-			getActionBar().setTitle(R.string.statistics);
-			if(findViewById(R.id.exerciseitem_detail_container) != null)
-				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.GONE);
-			getSupportFragmentManager().beginTransaction()
-				.replace(R.id.main_container, new StatisticsFragment())
-				.commit();
-			break;
-		}
+		SELECTED_MENU_ITEM = which;
+		changeMainContainerView(SELECTED_MENU_ITEM);
 		mAppMenu.toggle();
 	}
 
@@ -193,5 +159,81 @@ public class MainActivity extends FragmentActivity implements
 		intent.putExtra(SettingsDetailsActivity.WHICH_SETTINGS, which);
 		intent.putExtra(SettingsDetailsActivity.SETTINGS_NAME, data.getTitle());
 		startActivity(intent);
+	}
+	
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		outState.putBoolean("isMenuShowing", mAppMenu.isMenuShowing());
+		outState.putInt("currentMenuSelection", SELECTED_MENU_ITEM);
+	}
+	
+	/**
+	 * Handle the screen containers in both phone and tablet mode
+	 * @param which - The screen to be displayed
+	 */
+	private void changeMainContainerView(int which) {
+		switch (which) {
+		case OnMainSlidingMenuItemSelected.EDIT_PROFILE:
+			getActionBar().setSubtitle(R.string.my_account);
+			/** Hide the secondary container while on tablet mode**/
+			if(findViewById(R.id.exerciseitem_detail_container) != null)
+				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.GONE);
+			getSupportFragmentManager().beginTransaction()
+				.replace(R.id.main_container, new ProfileFragment())
+				.commit();
+			break;
+		case OnMainSlidingMenuItemSelected.ABOUT:
+			getActionBar().setSubtitle(R.string.about);
+			/** Hide the secondary container while on tablet mode**/
+			if(findViewById(R.id.exerciseitem_detail_container) != null)
+				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.GONE);
+			getSupportFragmentManager().beginTransaction()
+				.replace(R.id.main_container, new AboutFragment())
+				.commit();
+			break;
+		case OnMainSlidingMenuItemSelected.COURSES:
+			getActionBar().setSubtitle(R.string.my_courses);
+			/** Show the secondary container while on tablet mode**/
+			if(findViewById(R.id.exerciseitem_detail_container) != null)
+				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.VISIBLE);
+			getSupportFragmentManager().beginTransaction()
+				.replace(R.id.main_container, new ExerciseListFragment())
+				.commit();
+			break;
+		case OnMainSlidingMenuItemSelected.SETTINGS:
+			getActionBar().setSubtitle(R.string.settings);
+			/** Show the secondary container while on tablet mode**/
+			if(findViewById(R.id.exerciseitem_detail_container) != null)
+				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.VISIBLE);
+			getSupportFragmentManager().beginTransaction()
+				.replace(R.id.main_container, new SettingsFragment())
+				.commit();
+			break;
+		case OnMainSlidingMenuItemSelected.STATISTICS:
+			getActionBar().setSubtitle(R.string.statistics);
+			/** Hide the secondary container while on tablet mode**/
+			if(findViewById(R.id.exerciseitem_detail_container) != null)
+				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.GONE);
+			getSupportFragmentManager().beginTransaction()
+				.replace(R.id.main_container, new StatisticsFragment())
+				.commit();
+			break;
+		}
+		/** Clean the secondary fragment in case of tablet mode **/
+		if(findViewById(R.id.exerciseitem_detail_container) != null)
+			((FrameLayout) findViewById(R.id.exerciseitem_detail_container)).removeAllViews();
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+	       if(mAppMenu.isMenuShowing())
+	    	   mAppMenu.toggle();
+	       else
+	    	   finish();
+	        return true;
+	    }
+	    return super.onKeyDown(keyCode, event);
 	}
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="400dp"
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical" >
 
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/holder"
@@ -63,7 +64,7 @@
             style="@style/PositiveButtonStyle"
             android:text="@string/login" />
     </LinearLayout>
-    
-    <include layout="@layout/layout_login_footer"/>
+
+    <include layout="@layout/layout_login_footer" />
 
 </LinearLayout>

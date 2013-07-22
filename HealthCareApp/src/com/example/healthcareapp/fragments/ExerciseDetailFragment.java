@@ -6,7 +6,6 @@ import com.example.healthcareapp.ExerciseDetailActivity;
 import com.example.healthcareapp.MainActivity;
 import com.example.healthcareapp.R;
 
-import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.MediaController;
-import android.widget.TextView;
 import android.widget.VideoView;
 
 /**
@@ -53,13 +51,12 @@ public class ExerciseDetailFragment extends Fragment {
 		mController = new MediaController(getActivity());
 		mViewHolder = inflater.inflate(R.layout.fragment_exerciseitem_detail, container, false);
 		mVideo = (VideoView) mViewHolder.findViewById(R.id.exercise_video_view);	
-		((TextView) mViewHolder.findViewById(R.id.details_exercise_title)).setText(getArguments().getString(ARG_ITEM_NAME));
 		return mViewHolder;
 	}
 	
 	private void handleStream(boolean isAudio) throws IllegalStateException, IOException {
 		if(isAudio) {
-			mVideo.setVisibility(View.GONE);
+			/*mVideo.setVisibility(View.GONE);
 			//Temp implementation to play the file form local source
 			AssetFileDescriptor mediaFile = getActivity().getAssets().openFd("song.mp3");
 			//TODO Actual implementation
@@ -69,7 +66,7 @@ public class ExerciseDetailFragment extends Fragment {
 			mediaFile.close();
 			//mMediaPlayer.setDataSource(streamingURL);
 			mMediaPlayer.prepare(); // might take long! (for buffering, etc)
-			mMediaPlayer.start();
+			mMediaPlayer.start();*/
 		} else {
 			mVideo.setMediaController(mController);		
 			mVideo.setVideoURI(Uri.parse(streamingURL));

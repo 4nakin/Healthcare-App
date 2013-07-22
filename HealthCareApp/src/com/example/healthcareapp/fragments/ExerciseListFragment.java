@@ -38,9 +38,9 @@ public class ExerciseListFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 		mAdapter = new ExerciseListAdapter(getActivity());
 		mData.add(new ExerciseItem("Cleansing Breath", true, "Description", "http://www.youtube.com/watch?v=t7WFq17NxWA"));
-		mData.add(new ExerciseItem("Low Calorie Diet", true, "Description", "http://www.youtube.com/watch?v=t7WFq17NxWA"));
+		mData.add(new ExerciseItem("Low Calorie Diet", false, "Description", "http://www.youtube.com/watch?v=t7WFq17NxWA"));
 		mData.add(new ExerciseItem("Energy Bar", true, "Description", "http://www.youtube.com/watch?v=t7WFq17NxWA"));
-		mData.add(new ExerciseItem("Immune Booster", true, "Description", "http://www.youtube.com/watch?v=t7WFq17NxWA"));
+		mData.add(new ExerciseItem("Immune Booster", false, "Description", "http://www.youtube.com/watch?v=t7WFq17NxWA"));
 		mData.add(new ExerciseItem("Natural Sleeping Aid", true, "Description", "http://www.youtube.com/watch?v=t7WFq17NxWA"));
 		mAdapter.setListData(mData);
 		setListAdapter(mAdapter);

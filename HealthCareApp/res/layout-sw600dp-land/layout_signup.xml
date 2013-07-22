@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="@dimen/login_container_width"
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical" >
@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@drawable/holder"
+        android:background="@drawable/holder_land"
         android:overScrollMode="never" >
 
         <LinearLayout

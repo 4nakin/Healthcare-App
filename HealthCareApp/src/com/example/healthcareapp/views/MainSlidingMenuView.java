@@ -100,6 +100,26 @@ public class MainSlidingMenuView {
 		mMainListView.setItemChecked(0, true);
 	}
 	
+	public void setListSelection(int selection) {
+		switch (selection) {
+		case OnMainSlidingMenuItemSelected.COURSES:
+			mMainListView.setItemChecked(0, true);
+			break;
+		case OnMainSlidingMenuItemSelected.STATISTICS:
+			mMainListView.setItemChecked(1, true);
+			break;
+		case OnMainSlidingMenuItemSelected.SETTINGS:
+			mMainListView.setItemChecked(2, true);
+			break;
+		case OnMainSlidingMenuItemSelected.ABOUT:
+			mMainListView.setItemChecked(3, true);
+			break;
+		case OnMainSlidingMenuItemSelected.EDIT_PROFILE:
+			mMainListView.setItemChecked(ListView.INVALID_POSITION, true);
+			break;
+		}
+	}
+	
 	public int getAge(int year, int month, int day) {
 		DateMidnight birthdate = new DateMidnight(year, month+1, day);
 		DateTime now = new DateTime();

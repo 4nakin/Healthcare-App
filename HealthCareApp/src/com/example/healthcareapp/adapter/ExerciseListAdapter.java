@@ -44,15 +44,24 @@ public class ExerciseListAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+		final ViewHolder holder;
 		if (convertView == null) {
+			holder = new ViewHolder();
 			convertView = mInflater.inflate(R.layout.adapter_main_list, null);
-			TextView mTitleText = (TextView) convertView.findViewById(R.id.exercise_title);
-			TextView mDescriptionText = (TextView) convertView.findViewById(R.id.exercise_description);
-			TextView mCountText = (TextView) convertView.findViewById(R.id.exercise_count);
-			mTitleText.setText(mData.get(position).getExerciseName());
-			mDescriptionText.setText(mData.get(position).getExerciseDescription());
-			mCountText.setText(String.valueOf(position + 1));
-		}
+			holder.mTitleText = (TextView) convertView.findViewById(R.id.exercise_title);
+			holder.mDescriptionText = (TextView) convertView.findViewById(R.id.exercise_description);
+			holder.mCountText = (TextView) convertView.findViewById(R.id.exercise_count);
+			convertView.setTag(holder);
+		} else 
+			holder  = (ViewHolder) convertView.getTag();
+		
+		holder.mTitleText.setText(mData.get(position).getExerciseName());
+		holder.mDescriptionText.setText(mData.get(position).getExerciseDescription());
+		holder.mCountText.setText(String.valueOf(position + 1));
 		return convertView;
+	}
+	
+	static class ViewHolder {
+		TextView mTitleText, mDescriptionText, mCountText;
 	}
 }

@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 
 public class SignUpView implements RegisterUserTask.OnRegisterProcessCompletedListener {
 	
-	private ViewGroup mViewSignUpHolder, mViewSignUpFooterHolder;
+	private ViewGroup mViewSignUpHolder;
 	private EditText mUsername, mFirstname, mLastname, mEmail, mPassword, mRePassword;
 	private Activity mActivity;
 
@@ -23,8 +23,6 @@ public class SignUpView implements RegisterUserTask.OnRegisterProcessCompletedLi
 		mActivity = activity;
 		mViewSignUpHolder = (ViewGroup) LayoutInflater.from(
 				activity).inflate(R.layout.layout_signup, container, false);
-		mViewSignUpFooterHolder = (ViewGroup) LayoutInflater.from(
-				activity).inflate(R.layout.layout_signup_footer, container, false);
 		
 		mUsername = (EditText) mViewSignUpHolder.findViewById(R.id.sign_up_username);
 		mFirstname = (EditText) mViewSignUpHolder.findViewById(R.id.sign_up_first_name);
@@ -41,17 +39,15 @@ public class SignUpView implements RegisterUserTask.OnRegisterProcessCompletedLi
 			}
 		});
 		
-		mViewSignUpFooterHolder.findViewById(R.id.sign_up_exsisting_user).setOnClickListener(new OnClickListener() {
+		mViewSignUpHolder.findViewById(R.id.sign_up_exsisting_user).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				container.removeView(mViewSignUpFooterHolder);
 				container.removeView(mViewSignUpHolder);
 				new LoginView(activity, container);
 			}
 		});
 		
 		container.addView(mViewSignUpHolder);
-		container.addView(mViewSignUpFooterHolder);
 	}
 	
 	@Override

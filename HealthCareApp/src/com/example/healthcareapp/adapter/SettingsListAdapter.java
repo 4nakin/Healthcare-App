@@ -45,25 +45,35 @@ public class SettingsListAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+		final ViewHolder holder;
 		if (convertView == null) {
+			holder = new ViewHolder();
 			convertView = mInflater.inflate(R.layout.adapter_settings_list, null);
-			View mColorView = (View) convertView.findViewById(R.id.adapter_settings_list_color);
-			TextView mTitleText = (TextView) convertView.findViewById(R.id.adapter_settings_list_title_text);
-			TextView mDescriptionText = (TextView) convertView.findViewById(R.id.adapter_settings_list_description_text);
-			ImageView mIcon = (ImageView) convertView.findViewById(R.id.adapter_settings_list_icon);
-			mTitleText.setText(mData.get(position).getTitle());
-			mDescriptionText.setText(mData.get(position).getDescription());
-			mIcon.setImageResource(mData.get(position).getImageID());
-			if((position+1) % 2 == 0)
-				mColorView.setBackgroundColor(mInflater.getContext().getResources().getColor(android.R.color.holo_purple));
-			else if((position+1) % 3 == 0)
-				mColorView.setBackgroundColor(mInflater.getContext().getResources().getColor(android.R.color.holo_green_dark));
-			else if((position+1) % 5 == 0)
-				mColorView.setBackgroundColor(mInflater.getContext().getResources().getColor(android.R.color.holo_blue_dark));
-			else
-				mColorView.setBackgroundColor(mInflater.getContext().getResources().getColor(android.R.color.holo_orange_dark));
-		}		
+			holder.mColorView = (View) convertView.findViewById(R.id.adapter_settings_list_color);
+			holder.mTitleText = (TextView) convertView.findViewById(R.id.adapter_settings_list_title_text);
+			holder.mDescriptionText = (TextView) convertView.findViewById(R.id.adapter_settings_list_description_text);
+			holder.mIcon = (ImageView) convertView.findViewById(R.id.adapter_settings_list_icon);
+			convertView.setTag(holder);
+		} else 
+			holder = (ViewHolder) convertView.getTag();
+		
+		holder.mTitleText.setText(mData.get(position).getTitle());
+		holder.mDescriptionText.setText(mData.get(position).getDescription());
+		holder.mIcon.setImageResource(mData.get(position).getImageID());
+		if((position+1) % 2 == 0)
+			holder.mColorView.setBackgroundColor(mInflater.getContext().getResources().getColor(android.R.color.holo_purple));
+		else if((position+1) % 3 == 0)
+			holder.mColorView.setBackgroundColor(mInflater.getContext().getResources().getColor(android.R.color.holo_green_dark));
+		else if((position+1) % 5 == 0)
+			holder.mColorView.setBackgroundColor(mInflater.getContext().getResources().getColor(android.R.color.holo_blue_dark));
+		else
+			holder.mColorView.setBackgroundColor(mInflater.getContext().getResources().getColor(android.R.color.holo_orange_dark));			
 		return convertView;
 	}
 
+	static class ViewHolder {
+		View mColorView;
+		TextView mTitleText, mDescriptionText;
+		ImageView mIcon;
+	}
 }

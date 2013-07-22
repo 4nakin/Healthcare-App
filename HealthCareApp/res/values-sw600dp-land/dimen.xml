@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_menu_button_size">128dp</dimen>
+    <dimen name="slidingmenu_offset">400dp</dimen>
+    <dimen name="shadow_width">8dp</dimen>
+    <dimen name="login_container_width">400dp</dimen>
+</resources>

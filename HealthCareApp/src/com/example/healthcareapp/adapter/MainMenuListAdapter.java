@@ -44,13 +44,21 @@ public class MainMenuListAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+		final ViewHolder holder;
 		if (convertView == null) {
+			holder = new ViewHolder();
 			convertView = mInflater.inflate(R.layout.adapter_menu_list, null);
-			TextView mTitleText = (TextView) convertView.findViewById(R.id.adapter_main_menu_list_name);
-			mTitleText.setText(mData.get(position).getName());
-			mTitleText.setCompoundDrawablesWithIntrinsicBounds(mData.get(position).getImageID(), 0, 0, 0);
-		}		
+			holder.mTitleText = (TextView) convertView.findViewById(R.id.adapter_main_menu_list_name);
+			convertView.setTag(holder);
+		} else 
+			holder = (ViewHolder) convertView.getTag();
+		
+		holder.mTitleText.setText(mData.get(position).getName());
+		holder.mTitleText.setCompoundDrawablesWithIntrinsicBounds(mData.get(position).getImageID(), 0, 0, 0);
 		return convertView;
 	}
 
+	static class ViewHolder {
+		TextView mTitleText;
+	}
 }

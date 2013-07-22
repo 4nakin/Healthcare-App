@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 
 public class LoginView implements AuthenticateUserTask.OnAuthenticateUserListener {
 	
-	private ViewGroup mViewLoginHolder, mViewLoginFooterHolder;
+	private ViewGroup mViewLoginHolder;
 	private EditText mUsername, mPassword;
 	private Activity mActivity;
 
@@ -23,8 +23,6 @@ public class LoginView implements AuthenticateUserTask.OnAuthenticateUserListene
 		mActivity = activity;
 		mViewLoginHolder = (ViewGroup) LayoutInflater.from(
 				activity).inflate(R.layout.layout_login, container, false);
-		mViewLoginFooterHolder = (ViewGroup) LayoutInflater.from(
-				activity).inflate(R.layout.layout_login_footer, container, false);
 		
 		mUsername = (EditText) mViewLoginHolder.findViewById(R.id.login_username);
 		mPassword = (EditText) mViewLoginHolder.findViewById(R.id.login_password);
@@ -37,10 +35,9 @@ public class LoginView implements AuthenticateUserTask.OnAuthenticateUserListene
 			}
 		});
 		
-		mViewLoginFooterHolder.findViewById(R.id.login_new_user).setOnClickListener(new OnClickListener() {
+		mViewLoginHolder.findViewById(R.id.login_new_user).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				container.removeView(mViewLoginFooterHolder);
 				container.removeView(mViewLoginHolder);				
 				new SignUpView(activity, container);
 			}
@@ -49,14 +46,12 @@ public class LoginView implements AuthenticateUserTask.OnAuthenticateUserListene
 		mViewLoginHolder.findViewById(R.id.login_forgot_password).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				container.removeView(mViewLoginFooterHolder);
 				container.removeView(mViewLoginHolder);		
 				new ForgotPasswordView(activity, container);
 			}
 		});
 		
 		container.addView(mViewLoginHolder);
-		container.addView(mViewLoginFooterHolder);
 	}
 
 	@Override
