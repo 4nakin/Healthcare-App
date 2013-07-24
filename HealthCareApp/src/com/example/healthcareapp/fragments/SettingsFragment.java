@@ -30,6 +30,7 @@ public class SettingsFragment extends ListFragment {
 		mSettingsData.add(new SettingsListItem("Calibrate", "Calibrate your device for breath meter readings", R.drawable.ic_action_claibrate));
 		mSettingsData.add(new SettingsListItem("Clear Data", "Erase all exercise statistics stored by the application and server", R.drawable.ic_action_delete));
 		mSettingsData.add(new SettingsListItem("Change Password", "Change your application password", R.drawable.ic_action_password));
+		mSettingsData.add(new SettingsListItem("Help", "A walkthrough on how to use 101 Years", R.drawable.ic_action_help));
 		mSettingsData.add(new SettingsListItem("Logout", "Logout from your current session", R.drawable.ic_action_logout));
 		mAdapter.setListData(mSettingsData);
 		setListAdapter(mAdapter);

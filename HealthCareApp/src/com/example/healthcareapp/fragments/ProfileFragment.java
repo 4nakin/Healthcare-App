@@ -56,6 +56,20 @@ public class ProfileFragment extends Fragment implements  OnDateSetListener {
 			}
 		});
 		
+		mViewHolder.findViewById(R.id.profile_questionnaire).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(getActivity(), R.string.feature_na, Toast.LENGTH_LONG).show();
+			}
+		});
+		
+		mViewHolder.findViewById(R.id.profile_upgrade_profile).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(getActivity(), R.string.feature_na, Toast.LENGTH_LONG).show();
+			}
+		});
+		
 		return mViewHolder;
 	}
 	

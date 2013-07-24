@@ -11,6 +11,16 @@ public class AppPreferences {
 		mAppPrefs = context.getSharedPreferences("101YearsUserPreferences", 0); // 0 is private
 	}
 	
+	public void setMenuToggleGuideShown() {
+		SharedPreferences.Editor edit = mAppPrefs.edit();
+		edit.putBoolean("101YearsMenuToggleGuideShown", true);
+		edit.commit();
+	}
+	
+	public boolean getMenuToggleGuideShown() {
+		return mAppPrefs.getBoolean("101YearsMenuToggleGuideShown", false);
+	}
+	
 	public void setUsername(String userName) {
 		SharedPreferences.Editor edit = mAppPrefs.edit();
 		edit.putString("101YearsUsername", userName);

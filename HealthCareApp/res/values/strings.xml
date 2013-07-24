@@ -47,12 +47,17 @@
     <string name="overall_performance">Overall Performance</string>
     <string name="start">START</string>
     <string name="save_value">SAVE VALUE</string>
+    <string name="view_demo">View Demo</string>
+    <string name="description">Description</string>
+    <string name="start_session">Start Session</string>
+    <string name="close">Close</string>
     
     <string name="calibrate_header_text">Calibrate sensor for</string>
     <string name="upgrade_details">Upgrade your subscription to get access to new exercises to achieve those 101 Years.</string>
     <string name="questionnaire_detials">We would like you to answer a couple of questions to understand and help you achieve your 101 Years.</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</string>
     
+    <string name="msg_start_session_init">Press Start Session to begin.</string>
     <string name="msg_waiting_for_input">Waiting for user input.</string>
     <string name="msg_calibrating">Calibrating. Press SAVE VALUE to make the current value as your new preset.</string>
     <string name="msg_changes_saved">Profile updated successfully.</string>
@@ -62,7 +67,10 @@
     <string name="msg_login_empty_fields">Please you username and password.</string>
     <string name="msg_login_wrong_credential">The entered username or password donot match our records.</string>
     <string name="msg_login_failed">Authentication failed.</string>
-    <string name="msg_sensor_error">An error occured while accessing your device micro-phone.</string>
+    <string name="msg_sensor_error">An error occurred while accessing your device micro-phone.</string>
+    <string name="msg_swipe_ltr">Hold the corner of your screen and swipe left to access the menu.</string>
+    <string name="msg_swipe_btn">You can also press the button on the top left corner to toggle menu.</string>
+    <string name="feature_na">Feature not available.</string>
     
     <string-array name="months">
         <item>Jan</item>

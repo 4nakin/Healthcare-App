@@ -14,17 +14,20 @@ import com.example.healthcareapp.interfaces.OnSettingsListItemSelected;
 import com.example.healthcareapp.model.ExerciseItem;
 import com.example.healthcareapp.model.SettingsListItem;
 import com.example.healthcareapp.slidingmenu.lib.SlidingMenu;
-import com.example.healthcareapp.slidingmenu.lib.SlidingMenu.OnOpenedListener;
+import com.example.healthcareapp.slidingmenu.lib.SlidingMenu.OnOpenListener;
 import com.example.healthcareapp.util.AppPreferences;
 import com.example.healthcareapp.views.MainSlidingMenuView;
+import com.example.healthcareapp.views.UserGuidePopupWindow;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements
 	OnExerciseListItemSelected, OnMainSlidingMenuItemSelected, OnSettingsListItemSelected {
@@ -34,6 +37,7 @@ public class MainActivity extends FragmentActivity implements
 	private SlidingMenu mAppMenu;
 	private AppPreferences mPrefs;
 	private int SELECTED_MENU_ITEM = -1;
+	private UserGuidePopupWindow mGuideWindow;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,8 @@ public class MainActivity extends FragmentActivity implements
 			// activity should be in two-pane mode.
 			mTwoPane = true;
 		}		
+		mGuideWindow = new UserGuidePopupWindow(this);
+		mGuideWindow.setGuideView(UserGuidePopupWindow.MAIN_MENU_GUIDE);
 		mPrefs = new AppPreferences(this);
 		menuView = new MainSlidingMenuView(this);
 		menuView.setOnMainSlidingMenuItemSelected(this);
@@ -62,9 +68,9 @@ public class MainActivity extends FragmentActivity implements
 		mAppMenu.attachToActivity(this, SlidingMenu.SLIDING_WINDOW);
 		mAppMenu.setMenu(menuView.getView());
 		/** Update the user info if there where changes made **/
-		mAppMenu.setOnOpenedListener(new OnOpenedListener() {
+		mAppMenu.setOnOpenListener(new OnOpenListener() {
 			@Override
-			public void onOpened() {
+			public void onOpen() {
 				menuView.updateUserInfo(MainActivity.this);
 			}
 		});
@@ -92,6 +98,17 @@ public class MainActivity extends FragmentActivity implements
 		return super.onOptionsItemSelected(item);
 	}
 	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		if(!mPrefs.getMenuToggleGuideShown()) 
+			findViewById(R.id.main_container).post(new Runnable() {
+				public void run() {
+					mGuideWindow.showAtLocation(findViewById(R.id.main_container), Gravity.FILL, 0, 0);
+				}
+			});		
+	}
+	
 	/**
 	 * Callback method from {@link ExerciseListFragment.Callbacks}
 	 * indicating that the item with the given ID was selected.
@@ -102,7 +119,7 @@ public class MainActivity extends FragmentActivity implements
 			Bundle arguments = new Bundle();
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_NAME, data.getExerciseName());
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_URL, data.getExerciseVideoURL());
-			arguments.putBoolean(ExerciseDetailFragment.ARG_IS_AUDIO, data.isAudio());
+			arguments.putString(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION, data.getExerciseDescription());
 			ExerciseDetailFragment fragment = new ExerciseDetailFragment();
 			fragment.setArguments(arguments);
 			getSupportFragmentManager().beginTransaction()
@@ -113,7 +130,7 @@ public class MainActivity extends FragmentActivity implements
 					ExerciseDetailActivity.class);
 			detailIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_NAME, data.getExerciseName());
 			detailIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_URL, data.getExerciseVideoURL());
-			detailIntent.putExtra(ExerciseDetailFragment.ARG_IS_AUDIO, data.isAudio());
+			detailIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION, data.getExerciseDescription());
 			startActivity(detailIntent);
 		}
 	}
@@ -137,6 +154,7 @@ public class MainActivity extends FragmentActivity implements
 				showSettingsDetails(which, data);
 			break;
 		case OnSettingsListItemSelected.SETTINGS_DELETE:
+			Toast.makeText(this, R.string.feature_na, Toast.LENGTH_LONG).show();
 			break;
 		case OnSettingsListItemSelected.SETTINGS_CHANGE_PASSWORD:
 			if (mTwoPane) 
@@ -145,6 +163,9 @@ public class MainActivity extends FragmentActivity implements
 					.commit();
 			else
 				showSettingsDetails(which, data);
+			break;
+		case OnSettingsListItemSelected.SETTINGS_HELP:
+			Toast.makeText(this, R.string.feature_na, Toast.LENGTH_LONG).show();
 			break;
 		case OnSettingsListItemSelected.SETTINGS_LOGOUT:
 			mPrefs.setLoggedOut();

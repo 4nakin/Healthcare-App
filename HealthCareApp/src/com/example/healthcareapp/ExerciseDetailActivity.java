@@ -35,15 +35,13 @@ public class ExerciseDetailActivity extends FragmentActivity {
 		// http://developer.android.com/guide/components/fragments.html
 		//
 		if (savedInstanceState == null) {
-			// Create the detail fragment and add it to the activity
-			// using a fragment transaction.
 			Bundle arguments = new Bundle();
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_URL,
 					getIntent().getStringExtra(ExerciseDetailFragment.ARG_ITEM_URL));
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_NAME,
 					getIntent().getStringExtra(ExerciseDetailFragment.ARG_ITEM_NAME));
-			arguments.putBoolean(ExerciseDetailFragment.ARG_IS_AUDIO, 
-					getIntent().getBooleanExtra(ExerciseDetailFragment.ARG_IS_AUDIO, false));
+			arguments.putString(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION,
+					getIntent().getStringExtra(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION));
 			getActionBar().setTitle(getIntent().getStringExtra(ExerciseDetailFragment.ARG_ITEM_NAME));
 			ExerciseDetailFragment fragment = new ExerciseDetailFragment();
 			fragment.setArguments(arguments);

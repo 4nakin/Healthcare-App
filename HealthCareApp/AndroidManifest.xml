@@ -40,6 +40,10 @@
             android:label="@string/app_name"
             android:icon="@drawable/ic_action_sliding_menu"/>
         
+        <activity 
+            android:name="com.example.healthcareapp.ExerciseSessionActivity"
+            android:label="@string/app_name"/>
+        
         <activity
             android:name="com.example.healthcareapp.ExerciseDetailActivity"
             android:label="@string/title_exerciseitem_detail"

@@ -3,7 +3,6 @@ package com.example.healthcareapp.model;
 public class ExerciseItem {
 
 	private String mExerciseName;
-	private boolean isAudio;
 	private String mExerciseDescription;
 	private String mExerciseVideoURL;
 	
@@ -15,11 +14,10 @@ public class ExerciseItem {
 	 * @param mExerciseDescription
 	 * @param mExerciseVideoURL
 	 */
-	public ExerciseItem(String mExerciseName, boolean isAudio,
+	public ExerciseItem(String mExerciseName,
 			String mExerciseDescription, String mExerciseVideoURL) {
 		super();
 		this.mExerciseName = mExerciseName;
-		this.isAudio = isAudio;
 		this.mExerciseDescription = mExerciseDescription;
 		this.mExerciseVideoURL = mExerciseVideoURL;
 	}
@@ -64,19 +62,5 @@ public class ExerciseItem {
 	 */
 	public void setmExerciseDescription(String mExerciseDescription) {
 		this.mExerciseDescription = mExerciseDescription;
-	}
-
-	/**
-	 * @return the isAudio
-	 */
-	public boolean isAudio() {
-		return isAudio;
-	}
-
-	/**
-	 * @param isAudio the isAudio to set
-	 */
-	public void setAudio(boolean isAudio) {
-		this.isAudio = isAudio;
 	}
 }

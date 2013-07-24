@@ -2,51 +2,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:divider="?android:dividerVertical"
-    android:dividerPadding="5dp"
     android:gravity="center_vertical"
-    android:orientation="horizontal"
-    android:showDividers="middle" >
-
-    <TextView
-        android:id="@+id/exercise_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textColor="@color/app_light_gray"
-        android:textSize="42sp"
-        android:textStyle="bold" />
+    android:orientation="horizontal" >
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/exercise_title"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
+            android:gravity="center_vertical"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            android:paddingTop="5dp"
-            android:text="@string/new_user"
-            android:textColor="@color/app_light_gray"
-            android:textSize="18sp" />
+            android:paddingTop="10dp" >
+
+            <TextView
+                android:id="@+id/exercise_count"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@drawable/shape_oval_cyan"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/exercise_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:paddingLeft="5dp"
+                android:textColor="@color/app_light_gray"
+                android:textSize="20sp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/exercise_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
             android:fontFamily="sans-serif-condensed"
-            android:paddingBottom="5dp"
+            android:maxLines="2"
+            android:paddingBottom="10dp"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            android:text="@string/sign_up"
+            android:paddingTop="3dp"
             android:textColor="@android:color/darker_gray"
             android:textSize="12sp" />
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_action_next" />
 
 </LinearLayout>

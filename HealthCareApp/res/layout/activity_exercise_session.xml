@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <com.example.healthcareapp.widgets.RadialProgressView
+            android:id="@+id/session_progress_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/session_process_message_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:padding="55dp"
+            android:text="@string/msg_start_session_init"
+            android:textColor="@color/app_light_gray"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/session_toggle_btn"
+        style="@style/ClickableTextButtonStyle"
+        android:text="@string/start_session"
+        android:textSize="22sp" />
+
+</LinearLayout>
