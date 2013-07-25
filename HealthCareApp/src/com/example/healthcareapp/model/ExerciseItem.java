@@ -5,21 +5,24 @@ public class ExerciseItem {
 	private String mExerciseName;
 	private String mExerciseDescription;
 	private String mExerciseVideoURL;
-	
-	public ExerciseItem() { }
-		
+	private String mExerciseAudioURL;
+
+	public ExerciseItem() {
+	}
+
 	/**
 	 * @param mExerciseName
 	 * @param isAudio
 	 * @param mExerciseDescription
 	 * @param mExerciseVideoURL
 	 */
-	public ExerciseItem(String mExerciseName,
-			String mExerciseDescription, String mExerciseVideoURL) {
+	public ExerciseItem(String mExerciseName, String mExerciseDescription,
+			String mExerciseVideoURL, String mExerciseAudioURL) {
 		super();
 		this.mExerciseName = mExerciseName;
 		this.mExerciseDescription = mExerciseDescription;
 		this.mExerciseVideoURL = mExerciseVideoURL;
+		this.mExerciseAudioURL = mExerciseAudioURL;
 	}
 
 	/**
@@ -28,23 +31,25 @@ public class ExerciseItem {
 	public String getExerciseName() {
 		return mExerciseName;
 	}
-	
+
 	/**
-	 * @param mExerciseName the mExerciseName to set
+	 * @param mExerciseName
+	 *            the mExerciseName to set
 	 */
 	public void setExerciseName(String mExerciseName) {
 		this.mExerciseName = mExerciseName;
 	}
-	
+
 	/**
 	 * @return the mExerciseVideoURL
 	 */
 	public String getExerciseVideoURL() {
 		return mExerciseVideoURL;
 	}
-	
+
 	/**
-	 * @param mExerciseVideoURL the mExerciseVideoURL to set
+	 * @param mExerciseVideoURL
+	 *            the mExerciseVideoURL to set
 	 */
 	public void setExerciseVideoURL(String mExerciseVideoURL) {
 		this.mExerciseVideoURL = mExerciseVideoURL;
@@ -58,9 +63,24 @@ public class ExerciseItem {
 	}
 
 	/**
-	 * @param mExerciseDescription the mExerciseDescription to set
+	 * @param mExerciseDescription
+	 *            the mExerciseDescription to set
 	 */
-	public void setmExerciseDescription(String mExerciseDescription) {
+	public void setExerciseDescription(String mExerciseDescription) {
 		this.mExerciseDescription = mExerciseDescription;
+	}
+
+	/**
+	 * @return the mExerciseAudioURL
+	 */
+	public String getExerciseAudioURL() {
+		return mExerciseAudioURL;
+	}
+
+	/**
+	 * @param mExerciseAudioURL the mExerciseAudioURL to set
+	 */
+	public void setExerciseAudioURL(String mExerciseAudioURL) {
+		this.mExerciseAudioURL = mExerciseAudioURL;
 	}
 }

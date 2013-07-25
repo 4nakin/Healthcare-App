@@ -51,6 +51,7 @@
     <string name="description">Description</string>
     <string name="start_session">Start Session</string>
     <string name="close">Close</string>
+    <string name="no_data">No Data</string>
     
     <string name="calibrate_header_text">Calibrate sensor for</string>
     <string name="upgrade_details">Upgrade your subscription to get access to new exercises to achieve those 101 Years.</string>

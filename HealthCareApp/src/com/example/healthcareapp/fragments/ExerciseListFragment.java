@@ -6,23 +6,26 @@ import com.example.healthcareapp.R;
 import com.example.healthcareapp.adapter.ExerciseListAdapter;
 import com.example.healthcareapp.interfaces.OnExerciseListItemSelected;
 import com.example.healthcareapp.model.ExerciseItem;
+import com.example.healthcareapp.util.ExerciseDataLoader;
 
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.support.v4.app.LoaderManager.LoaderCallbacks;
+import android.support.v4.content.Loader;
 import android.view.View;
 import android.widget.ListView;
 
-public class ExerciseListFragment extends ListFragment {
+public class ExerciseListFragment extends ListFragment implements LoaderCallbacks<ArrayList<ExerciseItem>>{
 
+	private final int LOADER_ID = 1;
+	
 	private static final String STATE_ACTIVATED_POSITION = "activated_position";
 
 	private OnExerciseListItemSelected mCallbacks = sDummyCallbacks;
 
 	private int mActivatedPosition = ListView.INVALID_POSITION;
-	
-	private ArrayList<ExerciseItem> mData = new ArrayList<ExerciseItem>();
 	
 	private ExerciseListAdapter mAdapter;
 
@@ -32,18 +35,15 @@ public class ExerciseListFragment extends ListFragment {
 	};
 
 	public ExerciseListFragment() {}
-
+	
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
 		mAdapter = new ExerciseListAdapter(getActivity());
-		mData.add(new ExerciseItem("Cleansing Breath", getString(R.string.lorem_ipsum), "http://www.youtube.com/watch?v=t7WFq17NxWA"));
-		mData.add(new ExerciseItem("Low Calorie Diet", getString(R.string.lorem_ipsum), "http://www.youtube.com/watch?v=t7WFq17NxWA"));
-		mData.add(new ExerciseItem("Energy Bar", getString(R.string.lorem_ipsum), "http://www.youtube.com/watch?v=t7WFq17NxWA"));
-		mData.add(new ExerciseItem("Immune Booster", getString(R.string.lorem_ipsum), "http://www.youtube.com/watch?v=t7WFq17NxWA"));
-		mData.add(new ExerciseItem("Natural Sleeping Aid", getString(R.string.lorem_ipsum), "http://www.youtube.com/watch?v=t7WFq17NxWA"));
-		mAdapter.setListData(mData);
 		setListAdapter(mAdapter);
+		setListShown(false);
+		setEmptyText(getString(R.string.no_data));
+		getActivity().getSupportLoaderManager().initLoader(LOADER_ID, null, this);
 	}
 
 	@Override
@@ -80,7 +80,7 @@ public class ExerciseListFragment extends ListFragment {
 	public void onListItemClick(ListView listView, View view, int position,
 			long id) {
 		super.onListItemClick(listView, view, position, id);
-		mCallbacks.onListItemSelected(mData.get(position));
+		mCallbacks.onListItemSelected(mAdapter.getItem(position));
 	}
 
 	@Override
@@ -111,5 +111,27 @@ public class ExerciseListFragment extends ListFragment {
 			getListView().setItemChecked(position, true);
 		}
 		mActivatedPosition = position;
+	}
+
+	@Override
+	public Loader<ArrayList<ExerciseItem>> onCreateLoader(int arg0, Bundle arg1) {
+		Loader<ArrayList<ExerciseItem>> mLoader = new ExerciseDataLoader(getActivity());
+		mLoader.forceLoad();
+		return mLoader;
+	}
+
+	@Override
+	public void onLoadFinished(Loader<ArrayList<ExerciseItem>> arg0,
+			ArrayList<ExerciseItem> data) {
+		mAdapter.setListData(data);
+    	if(isResumed())
+    		setListShown(true);
+    	else
+    		setListShownNoAnimation(true);
+	}
+
+	@Override
+	public void onLoaderReset(Loader<ArrayList<ExerciseItem>> loader) {
+		mAdapter.setListData(new ArrayList<ExerciseItem>());
 	}
 }

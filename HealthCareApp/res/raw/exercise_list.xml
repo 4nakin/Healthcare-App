@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+    <exercise>
+        <name>Cleansing Breath</name>
+        <description>Cleansing Breath exercise description.</description>
+        <video-url>http://www.youtube.com/watch?v=t7WFq17NxWA</video-url>
+        <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
+    </exercise>
+    <exercise>
+        <name>Low Calorie Diet</name>
+        <description>Low Calorie Diet exercise description.</description>
+        <video-url>http://www.youtube.com/watch?v=t7WFq17NxWA</video-url>
+        <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
+    </exercise>
+    <exercise>
+        <name>Energy Bar</name>
+        <description>Energy Bar exercise description.</description>
+        <video-url>http://www.youtube.com/watch?v=t7WFq17NxWA</video-url>
+        <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
+    </exercise>
+    <exercise>
+        <name>Immune Booster</name>
+        <description>Immune Booster exercise description.</description>
+        <video-url>http://www.youtube.com/watch?v=t7WFq17NxWA</video-url>
+        <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
+    </exercise>
+    <exercise>
+        <name>Natural Sleeping Aid</name>
+        <description>Natural Sleeping Aid exercise description.</description>
+        <video-url>http://www.youtube.com/watch?v=t7WFq17NxWA</video-url>
+        <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
+    </exercise>
+</response>
