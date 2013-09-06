@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.healthcareapp"
+    package="com.healthcareapp.IOIyears"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -34,6 +34,13 @@
         
         <activity 
             android:name="com.example.healthcareapp.SettingsDetailsActivity"/>
+        
+        <activity 
+            android:name="com.example.healthcareapp.QuestionnaireMainActivity"
+            android:label="@string/questionnaire"/>
+        
+        <activity 
+            android:name="com.example.healthcareapp.QuestionnaireDetailActivity"/>
                 
         <activity 
             android:name="com.example.healthcareapp.MainActivity"

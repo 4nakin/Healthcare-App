@@ -1,7 +1,7 @@
 package com.example.healthcareapp.views;
 
 import com.example.healthcareapp.MainActivity;
-import com.example.healthcareapp.R;
+import com.healthcareapp.IOIyears.R;
 import com.example.healthcareapp.threads.AuthenticateUserTask;
 
 import android.app.Activity;

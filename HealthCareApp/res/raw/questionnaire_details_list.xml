@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+    <question id="12">
+        <question-detials>Do you have the aforementioned shotgun?</question-detials>
+        <question-type>0</question-type>
+        <question-answer>NA</question-answer>
+    </question>
+    <question id="13">
+        <question-detials>For how long have you been suffering?</question-detials>
+        <question-type>1</question-type>
+        <question-answer>NA</question-answer>
+    </question>
+    <question id="14">
+        <question-detials>Are you under medication?</question-detials>
+        <question-type>0</question-type>
+        <question-answer>NA</question-answer>
+    </question>
+    <question id="15">
+        <question-detials>Do you like cats?</question-detials>
+        <question-type>0</question-type>
+        <question-answer>0</question-answer>
+    </question>
+</response>

@@ -52,7 +52,14 @@
     <string name="start_session">Start Session</string>
     <string name="close">Close</string>
     <string name="no_data">No Data</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="your_answer">Your Answer</string>
+    <string name="save">Save</string>
+    <string name="clear">Clear</string>
+    <string name="you_answered">You answered</string>
     
+    <string name="about_details">\"Things that really matter in life seldom announces it\'s value. One such vital aspect of our existence is our breath\". 101 Years Inc., is purely focused on breathing technique to make all of us live healthy and longer. Founded by a doctor and engineer.</string>
     <string name="calibrate_header_text">Calibrate sensor for</string>
     <string name="upgrade_details">Upgrade your subscription to get access to new exercises to achieve those 101 Years.</string>
     <string name="questionnaire_detials">We would like you to answer a couple of questions to understand and help you achieve your 101 Years.</string>
@@ -71,6 +78,7 @@
     <string name="msg_sensor_error">An error occurred while accessing your device micro-phone.</string>
     <string name="msg_swipe_ltr">Hold the corner of your screen and swipe left to access the menu.</string>
     <string name="msg_swipe_btn">You can also press the button on the top left corner to toggle menu.</string>
+    <string name="msg_questionnaire_answer">Please enter your answer.</string>
     <string name="feature_na">Feature not available.</string>
     
     <string-array name="months">

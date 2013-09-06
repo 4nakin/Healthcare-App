@@ -1,6 +1,6 @@
 package com.example.healthcareapp.slidingmenu.lib;
 
-import com.example.healthcareapp.R;
+import com.healthcareapp.IOIyears.R;
 import com.example.healthcareapp.slidingmenu.lib.SlidingMenu.CanvasTransformer;
 
 import android.content.Context;

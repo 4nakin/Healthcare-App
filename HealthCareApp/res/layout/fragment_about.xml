@@ -42,7 +42,7 @@
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="@string/lorem_ipsum"
+                android:text="@string/about_details"
                 android:textColor="@color/app_light_gray"
                 android:textSize="14sp" />
         </ScrollView>

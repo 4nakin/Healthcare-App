@@ -1,10 +1,11 @@
 package com.example.healthcareapp;
 
 import com.example.healthcareapp.fragments.ExerciseDetailFragment;
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.healthcareapp.IOIyears.R;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
@@ -17,7 +18,7 @@ import android.view.MenuItem;
  * This activity is mostly just a 'shell' activity containing nothing more than
  * a {@link ExerciseDetailFragment}.
  */
-public class ExerciseDetailActivity extends FragmentActivity {
+public class ExerciseDetailActivity extends YouTubeBaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class ExerciseDetailActivity extends FragmentActivity {
 			getActionBar().setTitle(getIntent().getStringExtra(ExerciseDetailFragment.ARG_ITEM_NAME));
 			ExerciseDetailFragment fragment = new ExerciseDetailFragment();
 			fragment.setArguments(arguments);
-			getSupportFragmentManager().beginTransaction()
+			getFragmentManager().beginTransaction()
 					.add(R.id.exerciseitem_detail_container, fragment).commit();
 		}
 	}

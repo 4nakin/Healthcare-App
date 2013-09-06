@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+    <question name="Asthma">
+        <item><!-- STRUCTURE TO BE DECIDED ONCE I HAVE A SET OF QUESTIONS --></item>
+    </question>
+    <question name="Hypertension">
+        <item><!-- STRUCTURE TO BE DECIDED ONCE I HAVE A SET OF QUESTIONS --></item>
+    </question>
+    <question name="Diabetes">
+        <item><!-- STRUCTURE TO BE DECIDED ONCE I HAVE A SET OF QUESTIONS --></item>
+    </question>
+    <question name="OCD/Depression/Anxiety">
+        <item><!-- STRUCTURE TO BE DECIDED ONCE I HAVE A SET OF QUESTIONS --></item>
+    </question>
+    <question name="IHD">
+        <item><!-- STRUCTURE TO BE DECIDED ONCE I HAVE A SET OF QUESTIONS --></item>
+    </question>
+    <question name="Over Weight/Obesity">
+        <item><!-- STRUCTURE TO BE DECIDED ONCE I HAVE A SET OF QUESTIONS --></item>
+    </question>
+    <question name="Allergic Rhinitis">
+        <item><!-- STRUCTURE TO BE DECIDED ONCE I HAVE A SET OF QUESTIONS --></item>
+    </question>
+</response>

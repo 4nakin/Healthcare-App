@@ -16,7 +16,7 @@
 
 package com.example.healthcareapp.widgets;
 
-import com.example.healthcareapp.R;
+import com.healthcareapp.IOIyears.R;
 
 import android.content.Context;
 import android.content.res.TypedArray;

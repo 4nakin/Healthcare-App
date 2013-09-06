@@ -1,6 +1,6 @@
 package com.example.healthcareapp.views;
 
-import com.example.healthcareapp.R;
+import com.healthcareapp.IOIyears.R;
 
 import android.app.Activity;
 import android.view.LayoutInflater;

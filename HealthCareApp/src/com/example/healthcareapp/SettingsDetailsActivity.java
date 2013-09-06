@@ -3,12 +3,13 @@ package com.example.healthcareapp;
 import com.example.healthcareapp.fragments.CalibrateSettingsFragment;
 import com.example.healthcareapp.fragments.ChangePasswordFragment;
 import com.example.healthcareapp.interfaces.OnSettingsListItemSelected;
+import com.healthcareapp.IOIyears.R;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.MenuItem;
 
-public class SettingsDetailsActivity extends FragmentActivity {
+public class SettingsDetailsActivity extends Activity {
 
 	public static String WHICH_SETTINGS = "which";
 	public static String SETTINGS_NAME = "name";
@@ -24,14 +25,14 @@ public class SettingsDetailsActivity extends FragmentActivity {
 		
 		switch(getIntent().getIntExtra(WHICH_SETTINGS, OnSettingsListItemSelected.SETTINGS_CALIBRATE)) {
 		case OnSettingsListItemSelected.SETTINGS_CALIBRATE:
-			getSupportFragmentManager().beginTransaction()
+			getFragmentManager().beginTransaction()
 				.replace(R.id.settings_details_fragment_holder, new CalibrateSettingsFragment())
 				.commit();
 			break;
 		case OnSettingsListItemSelected.SETTINGS_DELETE:
 			break;
 		case OnSettingsListItemSelected.SETTINGS_CHANGE_PASSWORD:
-			getSupportFragmentManager().beginTransaction()
+			getFragmentManager().beginTransaction()
 				.replace(R.id.settings_details_fragment_holder, new ChangePasswordFragment())
 				.commit();
 			break;

@@ -7,6 +7,7 @@ import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.MenuItem;
+import com.healthcareapp.IOIyears.R;
 
 public class ExerciseSessionActivity extends Activity {
 

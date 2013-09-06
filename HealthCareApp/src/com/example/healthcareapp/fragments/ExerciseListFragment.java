@@ -2,18 +2,18 @@ package com.example.healthcareapp.fragments;
 
 import java.util.ArrayList;
 
-import com.example.healthcareapp.R;
+import com.healthcareapp.IOIyears.R;
 import com.example.healthcareapp.adapter.ExerciseListAdapter;
 import com.example.healthcareapp.interfaces.OnExerciseListItemSelected;
 import com.example.healthcareapp.model.ExerciseItem;
 import com.example.healthcareapp.util.ExerciseDataLoader;
 
 import android.app.Activity;
+import android.app.ListFragment;
+import android.app.LoaderManager.LoaderCallbacks;
+import android.content.Loader;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.Loader;
 import android.view.View;
 import android.widget.ListView;
 
@@ -43,7 +43,7 @@ public class ExerciseListFragment extends ListFragment implements LoaderCallback
 		setListAdapter(mAdapter);
 		setListShown(false);
 		setEmptyText(getString(R.string.no_data));
-		getActivity().getSupportLoaderManager().initLoader(LOADER_ID, null, this);
+		getActivity().getLoaderManager().initLoader(LOADER_ID, null, this);
 	}
 
 	@Override

@@ -18,10 +18,11 @@ import com.example.healthcareapp.slidingmenu.lib.SlidingMenu.OnOpenListener;
 import com.example.healthcareapp.util.AppPreferences;
 import com.example.healthcareapp.views.MainSlidingMenuView;
 import com.example.healthcareapp.views.UserGuidePopupWindow;
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.healthcareapp.IOIyears.R;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -29,7 +30,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
-public class MainActivity extends FragmentActivity implements
+public class MainActivity extends YouTubeBaseActivity implements
 	OnExerciseListItemSelected, OnMainSlidingMenuItemSelected, OnSettingsListItemSelected {
 
 	private boolean mTwoPane;
@@ -122,7 +123,7 @@ public class MainActivity extends FragmentActivity implements
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION, data.getExerciseDescription());
 			ExerciseDetailFragment fragment = new ExerciseDetailFragment();
 			fragment.setArguments(arguments);
-			getSupportFragmentManager().beginTransaction()
+			getFragmentManager().beginTransaction()
 					.replace(R.id.exerciseitem_detail_container, fragment)
 					.commit();
 		} else {
@@ -147,7 +148,7 @@ public class MainActivity extends FragmentActivity implements
 		switch (which) {
 		case OnSettingsListItemSelected.SETTINGS_CALIBRATE:
 			if (mTwoPane) 
-				getSupportFragmentManager().beginTransaction()
+				getFragmentManager().beginTransaction()
 					.replace(R.id.exerciseitem_detail_container, new CalibrateSettingsFragment())
 					.commit();
 			else
@@ -158,7 +159,7 @@ public class MainActivity extends FragmentActivity implements
 			break;
 		case OnSettingsListItemSelected.SETTINGS_CHANGE_PASSWORD:
 			if (mTwoPane) 
-				getSupportFragmentManager().beginTransaction()
+				getFragmentManager().beginTransaction()
 					.replace(R.id.exerciseitem_detail_container, new ChangePasswordFragment())
 					.commit();
 			else
@@ -200,7 +201,7 @@ public class MainActivity extends FragmentActivity implements
 			/** Hide the secondary container while on tablet mode**/
 			if(findViewById(R.id.exerciseitem_detail_container) != null)
 				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.GONE);
-			getSupportFragmentManager().beginTransaction()
+			getFragmentManager().beginTransaction()
 				.replace(R.id.main_container, new ProfileFragment())
 				.commit();
 			break;
@@ -209,7 +210,7 @@ public class MainActivity extends FragmentActivity implements
 			/** Hide the secondary container while on tablet mode**/
 			if(findViewById(R.id.exerciseitem_detail_container) != null)
 				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.GONE);
-			getSupportFragmentManager().beginTransaction()
+			getFragmentManager().beginTransaction()
 				.replace(R.id.main_container, new AboutFragment())
 				.commit();
 			break;
@@ -218,7 +219,7 @@ public class MainActivity extends FragmentActivity implements
 			/** Show the secondary container while on tablet mode**/
 			if(findViewById(R.id.exerciseitem_detail_container) != null)
 				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.VISIBLE);
-			getSupportFragmentManager().beginTransaction()
+			getFragmentManager().beginTransaction()
 				.replace(R.id.main_container, new ExerciseListFragment())
 				.commit();
 			break;
@@ -227,7 +228,7 @@ public class MainActivity extends FragmentActivity implements
 			/** Show the secondary container while on tablet mode**/
 			if(findViewById(R.id.exerciseitem_detail_container) != null)
 				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.VISIBLE);
-			getSupportFragmentManager().beginTransaction()
+			getFragmentManager().beginTransaction()
 				.replace(R.id.main_container, new SettingsFragment())
 				.commit();
 			break;
@@ -236,7 +237,7 @@ public class MainActivity extends FragmentActivity implements
 			/** Hide the secondary container while on tablet mode**/
 			if(findViewById(R.id.exerciseitem_detail_container) != null)
 				findViewById(R.id.exerciseitem_detail_container).setVisibility(View.GONE);
-			getSupportFragmentManager().beginTransaction()
+			getFragmentManager().beginTransaction()
 				.replace(R.id.main_container, new StatisticsFragment())
 				.commit();
 			break;

@@ -9,11 +9,11 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
-import com.example.healthcareapp.R;
+import com.healthcareapp.IOIyears.R;
 import com.example.healthcareapp.model.ExerciseItem;
 
+import android.content.AsyncTaskLoader;
 import android.content.Context;
-import android.support.v4.content.AsyncTaskLoader;
 
 public class ExerciseDataLoader extends AsyncTaskLoader<ArrayList<ExerciseItem>>{
 

@@ -2,6 +2,7 @@ package com.example.healthcareapp;
 
 import com.example.healthcareapp.util.AppPreferences;
 import com.example.healthcareapp.views.LoginView;
+import com.healthcareapp.IOIyears.R;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -87,5 +87,29 @@
         <item name="android:padding">5dp</item>
         <item name="android:clickable">true</item>
     </style>
+    
+    <style name="ClickablePositiveTextButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@drawable/selector_bordered_positive_button</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/app_light_gray</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:clickable">true</item>
+    </style>
+    
+    <style name="ClickableNegativeTextButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@drawable/selector_bordered_negative_button</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/app_light_gray</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:clickable">true</item>
+    </style>
 
 </resources>

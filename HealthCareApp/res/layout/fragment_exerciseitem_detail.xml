@@ -5,28 +5,11 @@
     android:orientation="vertical"
     tools:context=".ExerciseItemDetailFragment" >
 
-    <RelativeLayout
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/exercise_video_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1" >
-
-        <VideoView
-            android:id="@+id/exercise_video_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <Button
-            android:id="@+id/exercise_video_play_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@null"
-            android:drawableTop="@drawable/ic_action_play_video"
-            android:fontFamily="sans-serif-condensed"
-            android:text="@string/view_demo"
-            android:textColor="@drawable/selector_text_toggle"
-            android:textSize="24sp" />
-    </RelativeLayout>
+        android:layout_weight="1" />
 
     <LinearLayout
         android:id="@+id/detials_footer"

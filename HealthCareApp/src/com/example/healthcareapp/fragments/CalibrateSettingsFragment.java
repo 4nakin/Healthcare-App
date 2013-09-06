@@ -1,12 +1,12 @@
 package com.example.healthcareapp.fragments;
 
-import com.example.healthcareapp.R;
+import com.healthcareapp.IOIyears.R;
 import com.example.healthcareapp.util.SoundSensorUtil;
 import com.example.healthcareapp.widgets.RadialProgressView;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;

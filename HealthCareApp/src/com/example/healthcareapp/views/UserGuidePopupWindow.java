@@ -1,6 +1,6 @@
 package com.example.healthcareapp.views;
 
-import com.example.healthcareapp.R;
+import com.healthcareapp.IOIyears.R;
 import com.example.healthcareapp.util.AppPreferences;
 
 import android.content.Context;

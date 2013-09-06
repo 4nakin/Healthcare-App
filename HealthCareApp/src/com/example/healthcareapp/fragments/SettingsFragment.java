@@ -2,14 +2,14 @@ package com.example.healthcareapp.fragments;
 
 import java.util.ArrayList;
 
-import com.example.healthcareapp.R;
+import com.healthcareapp.IOIyears.R;
 import com.example.healthcareapp.adapter.SettingsListAdapter;
 import com.example.healthcareapp.interfaces.OnSettingsListItemSelected;
 import com.example.healthcareapp.model.SettingsListItem;
 
 import android.app.Activity;
+import android.app.ListFragment;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ListView;
 

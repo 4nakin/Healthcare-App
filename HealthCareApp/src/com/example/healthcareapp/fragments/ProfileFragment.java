@@ -2,13 +2,15 @@ package com.example.healthcareapp.fragments;
 
 import java.util.Calendar;
 
-import com.example.healthcareapp.R;
+import com.example.healthcareapp.QuestionnaireMainActivity;
+import com.healthcareapp.IOIyears.R;
 import com.example.healthcareapp.util.AppPreferences;
 
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
+import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -59,7 +61,7 @@ public class ProfileFragment extends Fragment implements  OnDateSetListener {
 		mViewHolder.findViewById(R.id.profile_questionnaire).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getActivity(), R.string.feature_na, Toast.LENGTH_LONG).show();
+				startActivity(new Intent(getActivity(), QuestionnaireMainActivity.class));
 			}
 		});
 		

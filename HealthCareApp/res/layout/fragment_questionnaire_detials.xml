@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ScrollView 
+        android:id="@+id/questionnaire_details_scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/list_view_padding"
+        android:layout_marginRight="@dimen/list_view_padding"
+        android:visibility="gone">
+        
+        <LinearLayout 
+            android:id="@+id/questionnaire_details_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+        
+    </ScrollView>
+    
+    <ProgressBar 
+        android:id="@+id/questionnaire_detials_loading_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView 
+        android:id="@+id/questionnaire_details_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/no_data"
+        android:textColor="@color/app_light_gray"
+        android:textSize="16sp"
+        android:visibility="gone"/>
+
+</LinearLayout>

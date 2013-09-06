@@ -2,7 +2,7 @@ package com.example.healthcareapp.adapter;
 
 import java.util.ArrayList;
 
-import com.example.healthcareapp.R;
+import com.healthcareapp.IOIyears.R;
 import com.example.healthcareapp.model.SettingsListItem;
 
 import android.content.Context;
