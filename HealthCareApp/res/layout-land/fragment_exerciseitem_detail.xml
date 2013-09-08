@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical" >
 
-            <TextView
+            <com.example.healthcareapp.widgets.BoldTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -38,7 +38,7 @@
                 android:textColor="@color/pink_dark"
                 android:textSize="20sp" />
 
-            <TextView
+            <com.example.healthcareapp.widgets.LightTextView
                 android:id="@+id/exercise_start_session_btn"
                 style="@style/ClickableTextButtonStyle"
                 android:text="@string/start_session"
@@ -50,11 +50,10 @@
             android:layout_height="match_parent"
             android:padding="5dp" >
 
-            <TextView
+            <com.example.healthcareapp.widgets.LightTextView
                 android:id="@+id/exercise_detials_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
                 android:textColor="@color/app_light_gray"
                 android:textIsSelectable="false"
                 android:textSize="14sp" />

@@ -17,42 +17,42 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <EditText
+            <com.example.healthcareapp.widgets.LightEditText
                 android:id="@+id/sign_up_first_name"
                 style="@style/LoginEditTextStyle"
                 android:hint="@string/first_name"
                 android:imeOptions="actionNext"
                 android:inputType="textPersonName" />
 
-            <EditText
+            <com.example.healthcareapp.widgets.LightEditText
                 android:id="@+id/sign_up_last_name"
                 style="@style/LoginEditTextStyle"
                 android:hint="@string/last_name"
                 android:imeOptions="actionNext"
                 android:inputType="textPersonName" />
 
-            <EditText
+            <com.example.healthcareapp.widgets.LightEditText
                 android:id="@+id/sign_up_username"
                 style="@style/LoginEditTextStyle"
                 android:hint="@string/username"
                 android:imeOptions="actionNext"
                 android:inputType="textPersonName" />
 
-            <EditText
+            <com.example.healthcareapp.widgets.LightEditText
                 android:id="@+id/sign_up_email"
                 style="@style/LoginEditTextStyle"
                 android:hint="@string/email"
                 android:imeOptions="actionNext"
                 android:inputType="textEmailAddress" />
 
-            <EditText
+            <com.example.healthcareapp.widgets.LightEditText
                 android:id="@+id/sign_up_password"
                 style="@style/LoginEditTextStyle"
                 android:hint="@string/password"
                 android:imeOptions="actionNext"
                 android:inputType="textPassword" />
 
-            <EditText
+            <com.example.healthcareapp.widgets.LightEditText
                 android:id="@+id/sign_up_re_enter_password"
                 style="@style/LoginEditTextStyle"
                 android:hint="@string/reenter_password"

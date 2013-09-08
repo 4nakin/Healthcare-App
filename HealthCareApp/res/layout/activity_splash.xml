@@ -13,15 +13,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-        <TextView
+        <com.example.healthcareapp.widgets.BoldTextView
             style="@style/SplashTextStyle"
-            android:fontFamily="sans-serif-condensed"
             android:text="@string/app_firstname"
             android:textStyle="bold" />
 
-        <TextView
+        <com.example.healthcareapp.widgets.LightTextView
             style="@style/SplashTextStyle"
-            android:fontFamily="sans-serif-light"
             android:text="@string/app_secondname" />
     </LinearLayout>
 

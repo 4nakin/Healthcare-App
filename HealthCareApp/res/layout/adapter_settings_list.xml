@@ -31,19 +31,17 @@
         android:layout_weight="1"
         android:orientation="vertical" >
 
-        <TextView
+        <com.example.healthcareapp.widgets.LightTextView
             android:id="@+id/adapter_settings_list_title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
             android:textColor="@color/app_light_gray"
             android:textSize="20sp" />
 
-        <TextView
+        <com.example.healthcareapp.widgets.BoldTextView
             android:id="@+id/adapter_settings_list_description_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
             android:lines="2"
             android:textColor="@android:color/darker_gray"
             android:textSize="12sp" />

@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <response>
-    <exercise>
+    <exercise id="1">
         <name>Kapalbhati</name>
         <description>This cleansing breath exercise promotes active exhalations, encouraging better removal of carbon dioxide from the lungs. Breathing gradually becomes normal as the carbon dioxide builds up in the system. Invigorates the brain cells, improving memory and comprehension.</description>
-        <video-url>http://www.youtube.com/watch?v=t7WFq17NxWA</video-url>
+        <video-url>knav83ApRLs</video-url>
         <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
+        <comments-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</comments-url>
     </exercise>
-    <exercise>
+    <exercise id="2">
         <name>Bastrika</name>
         <description>This cleansing breath exercise promotes active exhalations, encouraging better removal of carbon dioxide from the lungs. Breathing gradually becomes normal as the carbon dioxide builds up in the system. Invigorates the brain cells, improving memory and comprehension.</description>
-        <video-url>http://www.youtube.com/watch?v=t7WFq17NxWA</video-url>
+        <video-url>knav83ApRLs</video-url>
         <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
+        <comments-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</comments-url>
     </exercise>
-    <exercise>
+    <exercise id="3">
         <name>Nadi Shuddhi Pranayama</name>
         <description>This pranayama helps strengthen the lungs and increase overall lung capacity. Nadi Shuddhi pranayama is also referented as Alternate nostril breathing which helps treat disorders of the respiratory system. Nadi shuddhi pranayama can help with weight loss as it increases the rate of metabolism.</description>
-        <video-url>http://www.youtube.com/watch?v=t7WFq17NxWA</video-url>
+        <video-url>knav83ApRLs</video-url>
         <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
+        <comments-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</comments-url>
     </exercise>
-    <exercise>
+    <exercise id="4">
         <name>Bhramari Pranamaya</name>
         <description>Bhramari chanting produces more T cells (chief cells of the immune system)  in the saliva, indication stronger immune systems that can withstand stress better. During chanting the tongue interacts with the hard palate (roof of the mouth). The hard palate has sound and vibration sensitive points that get simulated as the tongue touches them (they way our fingers interacts with piano)</description>
-        <video-url>http://www.youtube.com/watch?v=t7WFq17NxWA</video-url>
+        <video-url>knav83ApRLs</video-url>
         <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
+        <comments-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</comments-url>
     </exercise>
 </response>

@@ -119,7 +119,7 @@ public class MainActivity extends YouTubeBaseActivity implements
 		if (mTwoPane) {
 			Bundle arguments = new Bundle();
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_NAME, data.getExerciseName());
-			arguments.putString(ExerciseDetailFragment.ARG_ITEM_URL, data.getExerciseVideoURL());
+			arguments.putString(ExerciseDetailFragment.ARG_VIDEO_URL, data.getExerciseVideoURL());
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION, data.getExerciseDescription());
 			ExerciseDetailFragment fragment = new ExerciseDetailFragment();
 			fragment.setArguments(arguments);
@@ -130,7 +130,7 @@ public class MainActivity extends YouTubeBaseActivity implements
 			Intent detailIntent = new Intent(this,
 					ExerciseDetailActivity.class);
 			detailIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_NAME, data.getExerciseName());
-			detailIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_URL, data.getExerciseVideoURL());
+			detailIntent.putExtra(ExerciseDetailFragment.ARG_VIDEO_URL, data.getExerciseVideoURL());
 			detailIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION, data.getExerciseDescription());
 			startActivity(detailIntent);
 		}

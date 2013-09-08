@@ -19,7 +19,7 @@
             android:paddingRight="5dp"
             android:paddingTop="10dp" >
 
-            <TextView
+            <com.example.healthcareapp.widgets.LightTextView
                 android:id="@+id/exercise_count"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
@@ -29,7 +29,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
-            <TextView
+            <com.example.healthcareapp.widgets.LightTextView
                 android:id="@+id/exercise_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
-        <TextView
+        <com.example.healthcareapp.widgets.BoldTextView
             android:id="@+id/exercise_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

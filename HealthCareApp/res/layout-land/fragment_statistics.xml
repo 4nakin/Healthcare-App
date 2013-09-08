@@ -18,7 +18,7 @@
             android:gravity="center_vertical"
             android:orientation="horizontal" >
 
-            <TextView
+            <com.example.healthcareapp.widgets.LightTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
-            <TextView
+            <com.example.healthcareapp.widgets.BoldTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

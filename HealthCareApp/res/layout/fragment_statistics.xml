@@ -12,10 +12,9 @@
         android:background="@drawable/shape_edit_button_normal"
         android:layout_margin="3dp">
 
-        <TextView
+        <com.example.healthcareapp.widgets.LightTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
             android:text="@string/show_me"
             android:padding="5dp"
             android:textColor="@color/app_light_gray"
@@ -34,11 +33,10 @@
         android:layout_height="match_parent"
         android:layout_weight="1" >
 
-        <TextView
+        <com.example.healthcareapp.widgets.BoldTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:fontFamily="sans-serif-condensed"
             android:padding="5dp"
             android:text="@string/overall_performance"
             android:textColor="#20000000"

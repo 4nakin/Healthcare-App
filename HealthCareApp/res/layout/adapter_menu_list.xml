@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.healthcareapp.widgets.LightTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/adapter_main_menu_list_name"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:fontFamily="sans-serif-light"
     android:gravity="center_vertical"
     android:padding="5dp"
     android:text="@string/new_user"

@@ -19,22 +19,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <TextView
+        <com.example.healthcareapp.widgets.LightTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:fontFamily="sans-serif-light"
             android:gravity="center"
             android:text="@string/msg_swipe_ltr"
             android:textColor="@android:color/white"
             android:textSize="14sp" />
 
-        <TextView
+        <com.example.healthcareapp.widgets.LightTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:drawableLeft="@drawable/ic_action_sliding_menu"
-            android:fontFamily="sans-serif-light"
             android:gravity="center"
             android:text="@string/msg_swipe_btn"
             android:textColor="@android:color/white"

@@ -17,7 +17,6 @@ public class QuestionnaireDetailActivity extends Activity {
 		setContentView(R.layout.activity_questionnaire_detail);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_action_bar_bg));
-		getActionBar().setSubtitle(getIntent().getStringExtra(QUESTINNAIRE_NAME));
 		
 		getFragmentManager()
 			.beginTransaction()

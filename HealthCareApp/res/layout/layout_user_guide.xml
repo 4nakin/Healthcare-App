@@ -12,7 +12,7 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <TextView
+    <com.example.healthcareapp.widgets.LightTextView
         android:id="@+id/user_popup_close_btn"
         style="@style/ClickableTextButtonStyle"
         android:text="@string/close"

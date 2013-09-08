@@ -9,25 +9,23 @@
         android:orientation="horizontal"
         android:showDividers="middle" >
 
-        <TextView
+        <com.example.healthcareapp.widgets.LightTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:fontFamily="sans-serif-light"
             android:gravity="right"
             android:paddingRight="5dp"
             android:text="@string/exsisting_user"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
 
-        <TextView
+        <com.example.healthcareapp.widgets.BoldTextView
             android:id="@+id/sign_up_exsisting_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:fontFamily="sans-serif-condensed"
             android:paddingLeft="5dp"
             android:text="@string/login"
             android:textColor="@drawable/selector_text_toggle"

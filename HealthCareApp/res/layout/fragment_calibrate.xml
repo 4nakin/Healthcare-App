@@ -11,10 +11,9 @@
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
-        <TextView
+        <com.example.healthcareapp.widgets.LightTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
             android:padding="3dp"
             android:text="@string/calibrate_header_text"
             android:textColor="@color/app_light_gray"
@@ -39,14 +38,13 @@
             android:layout_height="match_parent"
             android:padding="5dp" />
 
-        <TextView
+        <com.example.healthcareapp.widgets.LightTextView
             android:id="@+id/calibrate_process_message_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:background="?android:selectableItemBackground"
             android:clickable="true"
-            android:fontFamily="sans-serif-light"
             android:gravity="center"
             android:padding="55dp"
             android:text="@string/msg_waiting_for_input"

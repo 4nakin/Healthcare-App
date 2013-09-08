@@ -5,12 +5,11 @@
     android:background="@drawable/slider_bg"
     android:orientation="vertical" >
 
-    <TextView
+    <com.example.healthcareapp.widgets.BoldTextView
         android:id="@+id/adapter_questionnaire_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:padding="5dp"
         android:textColor="@color/app_light_gray"
@@ -28,7 +27,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <EditText
+            <com.example.healthcareapp.widgets.LightEditText
                 android:id="@+id/adapter_questionnaire_answer"
                 style="@style/LoginEditTextStyle"
                 android:hint="@string/your_answer"
@@ -41,14 +40,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <TextView
+                <com.example.healthcareapp.widgets.LightTextView
                     android:id="@+id/adapter_questionnaire_positive_btn"
                     style="@style/ClickablePositiveTextButtonStyle"
                     android:layout_weight="1"
                     android:text="@string/yes"
                     android:textSize="18sp" />
 
-                <TextView
+                <com.example.healthcareapp.widgets.LightTextView
                     android:id="@+id/adapter_questionnaire_negative_btn"
                     style="@style/ClickableNegativeTextButtonStyle"
                     android:layout_weight="1"
@@ -57,11 +56,10 @@
             </LinearLayout>
         </LinearLayout>
 
-        <TextView
+        <com.example.healthcareapp.widgets.LightTextView
             android:id="@+id/adapter_questionnaire_answer_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="sans-serif-light"
             android:gravity="center"
             android:padding="5dp"
             android:textColor="@android:color/darker_gray"

@@ -11,14 +11,14 @@
         android:background="@drawable/holder"
         android:orientation="vertical" >
 
-        <EditText
+        <com.example.healthcareapp.widgets.LightEditText
             android:id="@+id/login_username"
             style="@style/LoginEditTextStyle"
             android:hint="@string/username"
             android:imeOptions="actionNext"
             android:inputType="textPersonName" />
 
-        <EditText
+        <com.example.healthcareapp.widgets.LightEditText
             android:id="@+id/login_password"
             style="@style/LoginEditTextStyle"
             android:hint="@string/password"
@@ -45,13 +45,12 @@
                 android:text="@string/remember_me"
                 android:textColor="@color/app_dark_gray" />
 
-            <TextView
+            <com.example.healthcareapp.widgets.BoldTextView
                 android:id="@+id/login_forgot_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:clickable="true"
-                android:fontFamily="sans-serif-condensed"
                 android:gravity="right"
                 android:text="@string/forgot_password"
                 android:textColor="@drawable/selector_text_toggle"

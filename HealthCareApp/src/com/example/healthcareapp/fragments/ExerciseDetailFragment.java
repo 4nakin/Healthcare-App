@@ -28,14 +28,14 @@ public class ExerciseDetailFragment extends Fragment {
 	private final String YOUTUBE_API_KEY = "AIzaSyC9HL3mxOUTalO160976FSUPb-gQv-425E";
 	
 	public static final String ARG_ITEM_NAME = "item_id";
-	public static final String ARG_ITEM_URL = "item_url";
+	public static final String ARG_VIDEO_URL = "item_url";
 	public static final String ARG_ITEM_DESCRIPTION = "item_description";
 	
 	private View mViewHolder;
 	private YouTubePlayerView mVideo;
 	
 	public ExerciseDetailFragment() {}
-
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class ExerciseDetailFragment extends Fragment {
 			public void onInitializationSuccess(Provider arg0, YouTubePlayer player,
 					boolean wasRestored) {
 				if (!wasRestored) 
-				      player.cueVideo("knav83ApRLs");
+				      player.cueVideo(getArguments().getString(ARG_VIDEO_URL));
 			}
 			
 			@Override

@@ -16,12 +16,11 @@
             android:layout_height="match_parent"
             android:padding="5dp" />
 
-        <TextView
+        <com.example.healthcareapp.widgets.LightTextView
             android:id="@+id/session_process_message_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:fontFamily="sans-serif-light"
             android:gravity="center"
             android:padding="55dp"
             android:text="@string/msg_start_session_init"

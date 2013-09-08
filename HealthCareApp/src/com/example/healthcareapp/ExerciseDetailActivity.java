@@ -37,8 +37,8 @@ public class ExerciseDetailActivity extends YouTubeBaseActivity {
 		//
 		if (savedInstanceState == null) {
 			Bundle arguments = new Bundle();
-			arguments.putString(ExerciseDetailFragment.ARG_ITEM_URL,
-					getIntent().getStringExtra(ExerciseDetailFragment.ARG_ITEM_URL));
+			arguments.putString(ExerciseDetailFragment.ARG_VIDEO_URL,
+					getIntent().getStringExtra(ExerciseDetailFragment.ARG_VIDEO_URL));
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_NAME,
 					getIntent().getStringExtra(ExerciseDetailFragment.ARG_ITEM_NAME));
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION,

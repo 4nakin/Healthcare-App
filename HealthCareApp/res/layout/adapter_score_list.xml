@@ -14,21 +14,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <TextView
+        <com.example.healthcareapp.widgets.BoldTextView
             android:id="@+id/score_adapter_meter_value_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:textColor="@color/pink_dark"
             android:textSize="22sp" />
     </RelativeLayout>
     
-    <TextView 
+    <com.example.healthcareapp.widgets.LightTextView 
         android:id="@+id/score_adapter_exercise_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
         android:layout_weight="1"
         android:textColor="@color/app_light_gray"
         android:layout_gravity="center_vertical"

@@ -40,7 +40,8 @@
             android:label="@string/questionnaire"/>
         
         <activity 
-            android:name="com.example.healthcareapp.QuestionnaireDetailActivity"/>
+            android:name="com.example.healthcareapp.QuestionnaireDetailActivity"
+            android:label="@string/questionnaire"/>
                 
         <activity 
             android:name="com.example.healthcareapp.MainActivity"

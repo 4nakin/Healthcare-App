@@ -28,19 +28,17 @@
                 android:gravity="center"
                 android:orientation="vertical" >
 
-                <TextView
+                <com.example.healthcareapp.widgets.BoldTextView
                     android:id="@+id/sliding_menu_main_menu_user_age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-condensed"
                     android:text="@string/na"
                     android:textColor="@color/pink_dark"
                     android:textSize="36sp" />
 
-                <TextView
+                <com.example.healthcareapp.widgets.LightTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
                     android:text="@string/app_secondname"
                     android:textColor="@color/app_dark_gray"
                     android:textSize="18sp" />
@@ -54,27 +52,25 @@
             android:orientation="vertical" 
             android:layout_margin="3dp">
 
-            <TextView
+            <com.example.healthcareapp.widgets.LightTextView
                 android:id="@+id/sliding_menu_main_menu_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
                 android:gravity="center_vertical"
                 android:textColor="@color/app_dark_gray"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <com.example.healthcareapp.widgets.BoldTextView
                 android:id="@+id/sliding_menu_main_menu_user_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
                 android:text="@string/na"
                 android:textColor="@color/pink_dark"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <com.example.healthcareapp.widgets.LightTextView
                 android:id="@+id/sliding_menu_main_menu_edit_profile"
                 style="@style/ClickableTextButtonStyle"
                 android:text="@string/update_profile"
