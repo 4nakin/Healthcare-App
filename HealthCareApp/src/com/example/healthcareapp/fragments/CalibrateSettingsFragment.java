@@ -54,7 +54,7 @@ public class CalibrateSettingsFragment extends Fragment {
         public void run() {
         	mAmplitude = mSensor.getAmplitude();
                 Log.i("Noise Alert", "Value : " + String.valueOf(mAmplitude));
-                mMeterView.setCurrentValue((int) mAmplitude);
+                mMeterView.setCurrentValue((int) mAmplitude, true);
                 mHandler.postDelayed(mPollTask, POLL_INTERVAL);
         }
 	};

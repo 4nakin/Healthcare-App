@@ -61,6 +61,18 @@
     <string name="please_select">Please select if you are suffering from</string>
     <string name="you_are_suffering_from">You are suffering from</string>
     <string name="none_of_the_above">None of the above</string>
+    <string name="pause_session">Pause Session</string>
+    <string name="end_session">End Session</string>
+    <string name="resume_session">Resume Session</string>
+    <string name="session_paused">Session Paused.</string>
+    <string name="session_active">Session Active.</string>
+    <string name="time_elapsed">Time Elapsed</string>
+    <string name="zero">00</string>
+    <string name="clock_center">:</string>
+    <string name="comments">Comments</string>
+    <string name="comment">Comment</string>
+    <string name="session_summary">Session Summary</string>
+    <string name="share">Share</string>
     
     <string name="about_details">\"Things that really matter in life seldom announces it\'s value. One such vital aspect of our existence is our breath\". 101 Years Inc., is purely focused on breathing technique to make all of us live healthy and longer. Founded by a doctor and engineer.</string>
     <string name="calibrate_header_text">Calibrate sensor for</string>
@@ -83,6 +95,8 @@
     <string name="msg_swipe_btn">You can also press the button on the top left corner to toggle menu.</string>
     <string name="msg_questionnaire_answer">Please enter your answer.</string>
     <string name="msg_select_questionnaire_items">Please select before proceeding.</string>
+    <string name="msg_enter_comment">Please enter your comment.</string>
+    <string name="msg_your_score">Your session score.</string>
     <string name="feature_na">Feature not available.</string>
     
     <string-array name="months">

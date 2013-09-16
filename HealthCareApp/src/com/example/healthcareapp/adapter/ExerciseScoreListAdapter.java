@@ -59,7 +59,7 @@ public class ExerciseScoreListAdapter extends BaseAdapter{
 		holder.mScoreMeter.setMaxValue(100);
 		holder.mTitleText.setText(mData.get(position).getName());
 		holder.mScoreText.setText(String.valueOf(mData.get(position).getScore()));
-		holder.mScoreMeter.setCurrentValue(mData.get(position).getScore());
+		holder.mScoreMeter.setCurrentValue(mData.get(position).getScore(), false);
 		return convertView;
 	}
 

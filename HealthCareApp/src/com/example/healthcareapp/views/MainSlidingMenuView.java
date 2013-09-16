@@ -132,7 +132,7 @@ public class MainSlidingMenuView {
 			mUsername.setText(mPrefs.getFirstname() + " " + mPrefs.getLastname());
 		if(mPrefs.getDOBYear() != -1 && mPrefs.getDOBMonth() != -1 && mPrefs.getDOBDay() != -1) {
 			mAge.setText(String.valueOf(getAge(mPrefs.getDOBYear(), mPrefs.getDOBMonth(), mPrefs.getDOBDay())));
-			mProgressView.setCurrentValue(getAge(mPrefs.getDOBYear(), mPrefs.getDOBMonth(), mPrefs.getDOBDay()));
+			mProgressView.setCurrentValue(getAge(mPrefs.getDOBYear(), mPrefs.getDOBMonth(), mPrefs.getDOBDay()), false);
 		}
 		if(mPrefs.getGender() != -1) 
 			mGender.setText((mPrefs.getGender() == 0) ? context.getString(R.string.male) : context.getString(R.string.female));

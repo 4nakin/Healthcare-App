@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|right">
+
+        <com.example.healthcareapp.widgets.BoldTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
+            android:padding="5dp"
+            android:text="@string/session_summary"
+            android:textColor="@color/pink_dark"
+            android:textSize="20sp" />
+
+        <com.example.healthcareapp.widgets.LightTextView
+            android:id="@+id/session_details_popup_close"
+            style="@style/ClickableTextButtonStyle"
+            android:drawableLeft="@drawable/ic_action_close" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical" >
+
+        <RelativeLayout
+            android:layout_width="96dp"
+            android:layout_height="96dp" >
+
+            <com.example.healthcareapp.widgets.RadialProgressView
+                android:id="@+id/session_progress_view"
+                android:layout_width="96dp"
+                android:layout_height="96dp" />
+
+            <com.example.healthcareapp.widgets.BoldTextView
+                android:id="@+id/session_score_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="5dp"
+                android:textColor="@color/pink_dark"
+                android:textSize="48sp" />
+        </RelativeLayout>
+
+        <com.example.healthcareapp.widgets.LightTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="@string/msg_your_score"
+            android:textColor="@color/app_light_gray"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" >
+
+        <com.example.healthcareapp.widgets.LightTextView
+            android:id="@+id/session_facebook_share"
+            style="@style/PositiveButtonStyle"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_action_facebook"
+            android:gravity="center"
+            android:text="@string/share" />
+
+        <com.example.healthcareapp.widgets.LightTextView
+            android:id="@+id/session_google_share"
+            style="@style/NegativeButtonStyle"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_action_google"
+            android:gravity="center"
+            android:text="@string/share" />
+    </LinearLayout>
+
+</LinearLayout>

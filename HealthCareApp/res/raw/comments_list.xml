@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response comment-count="4" like-count="3" dislike-count="1">
+    <comment>
+        <username>Cat</username>
+        <like>1</like>
+        <comment-text>Meow meow kitty kat</comment-text>
+    </comment>
+    <comment>
+        <username>Human</username>
+        <like>1</like>
+        <comment-text>nice comment above</comment-text>
+    </comment>
+    <comment>
+        <username>Strider</username>
+        <like>0</like>
+        <comment-text>Okay types need real data</comment-text>
+    </comment>
+    <comment>
+        <username>Spaniard here!</username>
+        <like>1</like>
+        <comment-text>hola</comment-text>
+    </comment>
+</response>

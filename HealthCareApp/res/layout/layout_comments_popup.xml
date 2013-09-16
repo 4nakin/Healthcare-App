@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/slider_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="?android:dividerVertical"
+        android:dividerPadding="2dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:showDividers="middle" >
+
+        <com.example.healthcareapp.widgets.LightTextView
+            android:id="@+id/comments_popup_header_comments_count_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="@color/app_light_gray"
+            android:textSize="15sp" />
+
+        <com.example.healthcareapp.widgets.LightTextView
+            android:id="@+id/comments_popup_header_likes_count_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_action_like"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:textColor="@color/app_light_gray"
+            android:textSize="15sp" />
+
+        <com.example.healthcareapp.widgets.LightTextView
+            android:id="@+id/comments_popup_header_dislikes_count_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_action_dislike"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:textColor="@color/app_light_gray"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/comments_popup_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal" >
+
+            <com.example.healthcareapp.widgets.LightEditText
+                android:id="@+id/comments_user_input"
+                style="@style/LoginEditTextStyle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/comment"
+                android:imeOptions="actionNext"
+                android:inputType="textShortMessage" />
+
+            <CheckBox
+                android:id="@+id/comments_like_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_like_checkbox"
+                android:checked="true"
+                android:padding="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <com.example.healthcareapp.widgets.LightTextView
+                android:id="@+id/comments_popup_post_btn"
+                style="@style/ClickablePositiveTextButtonStyle"
+                android:layout_weight="1"
+                android:text="@string/comment"
+                android:textSize="18sp" />
+
+            <com.example.healthcareapp.widgets.LightTextView
+                android:id="@+id/comments_popup_close_btn"
+                style="@style/ClickableNegativeTextButtonStyle"
+                android:layout_weight="1"
+                android:text="@string/close"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
