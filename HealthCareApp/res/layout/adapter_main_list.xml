@@ -2,8 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:divider="?android:dividerVertical"
+    android:dividerPadding="5dp"
     android:gravity="center_vertical"
-    android:orientation="horizontal" >
+    android:orientation="horizontal"
+    android:showDividers="middle" >
 
     <LinearLayout
         android:layout_width="0dp"
@@ -55,9 +58,12 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/exercise_jupm_to_session"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/ic_action_next" />
+        android:background="?android:selectableItemBackground"
+        android:src="@drawable/ic_action_next"
+        android:clickable="true" />
 
 </LinearLayout>

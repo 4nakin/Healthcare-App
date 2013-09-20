@@ -2,12 +2,22 @@ package com.example.healthcareapp.model;
 
 public class ExerciseItem {
 
+	private String mExerciseID;
 	private String mExerciseName;
 	private String mExerciseDescription;
 	private String mExerciseVideoURL;
 	private String mExerciseAudioURL;
+	private String mExerciseCommentURL;
+	private long mExerciseSessionTime;
 
-	public ExerciseItem() {
+	public ExerciseItem() { }
+	
+	/**
+	 * @param mExerciseID
+	 */
+	public ExerciseItem(String mExerciseID) {
+		super();
+		this.mExerciseID = mExerciseID;
 	}
 
 	/**
@@ -82,5 +92,53 @@ public class ExerciseItem {
 	 */
 	public void setExerciseAudioURL(String mExerciseAudioURL) {
 		this.mExerciseAudioURL = mExerciseAudioURL;
+	}
+
+	
+	/**
+	 * @return the mExerciseID
+	 */
+	public String getExerciseID() {
+		return mExerciseID;
+	}
+	
+
+	/**
+	 * @param mExerciseID the mExerciseID to set
+	 */
+	public void setExerciseID(String mExerciseID) {
+		this.mExerciseID = mExerciseID;
+	}
+	
+
+	/**
+	 * @return the mExerciseCommentURL
+	 */
+	public String getExerciseCommentURL() {
+		return mExerciseCommentURL;
+	}
+	
+
+	/**
+	 * @param mExerciseCommentURL the mExerciseCommentURL to set
+	 */
+	public void setExerciseCommentURL(String mExerciseCommentURL) {
+		this.mExerciseCommentURL = mExerciseCommentURL;
+	}
+	
+
+	/**
+	 * @return the mExerciseSessionTime
+	 */
+	public long getExerciseSessionTime() {
+		return mExerciseSessionTime;
+	}
+	
+
+	/**
+	 * @param mExerciseSessionTime the mExerciseSessionTime to set
+	 */
+	public void setExerciseSessionTime(String mExerciseSessionTime) {
+		this.mExerciseSessionTime = Long.valueOf(mExerciseSessionTime);
 	}
 }

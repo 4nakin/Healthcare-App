@@ -121,6 +121,7 @@ public class MainActivity extends YouTubeBaseActivity implements
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_NAME, data.getExerciseName());
 			arguments.putString(ExerciseDetailFragment.ARG_VIDEO_URL, data.getExerciseVideoURL());
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION, data.getExerciseDescription());
+			arguments.putLong(ExerciseDetailFragment.ARG_SESSION_TIME, data.getExerciseSessionTime());
 			ExerciseDetailFragment fragment = new ExerciseDetailFragment();
 			fragment.setArguments(arguments);
 			getFragmentManager().beginTransaction()
@@ -132,6 +133,7 @@ public class MainActivity extends YouTubeBaseActivity implements
 			detailIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_NAME, data.getExerciseName());
 			detailIntent.putExtra(ExerciseDetailFragment.ARG_VIDEO_URL, data.getExerciseVideoURL());
 			detailIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION, data.getExerciseDescription());
+			detailIntent.putExtra(ExerciseDetailFragment.ARG_SESSION_TIME, data.getExerciseSessionTime());
 			startActivity(detailIntent);
 		}
 	}
@@ -257,5 +259,12 @@ public class MainActivity extends YouTubeBaseActivity implements
 	        return true;
 	    }
 	    return super.onKeyDown(keyCode, event);
+	}
+
+	@Override
+	public void onStartSessionItemSelected(ExerciseItem data) {
+		Intent intent = new Intent(this, ExerciseSessionActivity.class); 
+		intent.putExtra(ExerciseDetailFragment.ARG_SESSION_TIME, data.getExerciseSessionTime());
+		startActivity(intent);
 	}
 }

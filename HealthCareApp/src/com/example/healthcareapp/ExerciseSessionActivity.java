@@ -2,6 +2,7 @@ package com.example.healthcareapp;
 
 import java.io.IOException;
 
+import com.example.healthcareapp.fragments.ExerciseDetailFragment;
 import com.example.healthcareapp.views.SessionResultWindow;
 import com.healthcareapp.IOIyears.R;
 
@@ -30,7 +31,7 @@ public class ExerciseSessionActivity extends Activity {
 	
 	private long startTime = 0L, pauseStartTime = 0L, pauseEndTime = 0L;
 	private Handler mSessionTimerHandler = new Handler();
-	private long timeInMilliseconds = 0L;
+	private long timeInMilliseconds = 0L, mRecommendedSessionTime = 0L;
 	private boolean isPaused = false;
 	private SessionResultWindow mResultDialog;
 	
@@ -48,7 +49,8 @@ public class ExerciseSessionActivity extends Activity {
 		mPauseBtn = (TextView) findViewById(R.id.session_pause_btn);
 		mSessionHandlerText = (TextView) findViewById(R.id.session_process_message_container);
 		
-		mSessionHandlerText.setText(getProposedTime(300000L));
+		mRecommendedSessionTime = getIntent().getLongExtra(ExerciseDetailFragment.ARG_SESSION_TIME, 0L);
+		mSessionHandlerText.setText(getProposedTime(mRecommendedSessionTime));
 						
 		final Animation animation = new AlphaAnimation(1, 0); // Change alpha from fully visible to invisible
 	    animation.setDuration(500); // duration - half a second
@@ -94,8 +96,8 @@ public class ExerciseSessionActivity extends Activity {
 				mSessionTimerHandler.removeCallbacks(updateTimerThread);
 				mMinutes.startAnimation(animation);
 				mSeconds.startAnimation(animation);
-				mSessionHandlerText.setText(getProposedTime(300000L));
-				mResultDialog.setScore(getSessionScore(300000L, timeInMilliseconds));
+				mSessionHandlerText.setText(getProposedTime(mRecommendedSessionTime));
+				mResultDialog.setScore(getSessionScore(mRecommendedSessionTime, timeInMilliseconds));
 				mResultDialog.showAtLocation(mSessionHandlerText, Gravity.CENTER, 0, 0);
 			}
 		});

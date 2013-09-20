@@ -43,6 +43,8 @@ public class ExerciseDetailActivity extends YouTubeBaseActivity {
 					getIntent().getStringExtra(ExerciseDetailFragment.ARG_ITEM_NAME));
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION,
 					getIntent().getStringExtra(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION));
+			arguments.putLong(ExerciseDetailFragment.ARG_SESSION_TIME,
+					getIntent().getLongExtra(ExerciseDetailFragment.ARG_SESSION_TIME, 0L));
 			getActionBar().setTitle(getIntent().getStringExtra(ExerciseDetailFragment.ARG_ITEM_NAME));
 			ExerciseDetailFragment fragment = new ExerciseDetailFragment();
 			fragment.setArguments(arguments);

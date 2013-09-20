@@ -32,6 +32,7 @@ public class ExerciseDetailFragment extends Fragment {
 	public static final String ARG_ITEM_NAME = "item_id";
 	public static final String ARG_VIDEO_URL = "item_url";
 	public static final String ARG_ITEM_DESCRIPTION = "item_description";
+	public static final String ARG_SESSION_TIME = "session_time";
 	
 	private View mViewHolder;
 	private YouTubePlayerView mVideo;
@@ -65,7 +66,10 @@ public class ExerciseDetailFragment extends Fragment {
 		mViewHolder.findViewById(R.id.exercise_start_session_btn).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(getActivity(), ExerciseSessionActivity.class));
+				Intent intent = new Intent(getActivity(), ExerciseSessionActivity.class); 
+				intent.putExtra(ExerciseDetailFragment.ARG_SESSION_TIME, 
+						getArguments().getLong(ExerciseDetailFragment.ARG_SESSION_TIME));
+				startActivity(intent);
 			}
 		});
 		

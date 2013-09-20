@@ -10,11 +10,14 @@ import com.example.healthcareapp.model.ExerciseItem;
 
 public class ExerciseDataHandler extends DefaultHandler {
 	
-	private final String TAG_EXERCISE = "exercise";
-	private final String TAG_NAME = "name";
-	private final String TAG_DESCRIPTION = "description";
-	private final String TAG_VIDEO_URL = "video-url";
-	private final String TAG_AUDIO_URL = "audio-url";
+	private final String ATTR_ID = "id";
+	private final String NODE_EXERCISE = "exercise";
+	private final String NODE_NAME = "name";
+	private final String NODE_DESCRIPTION = "description";
+	private final String NODE_VIDEO_URL = "video-url";
+	private final String NODE_AUDIO_URL = "audio-url";
+	private final String NODE_COMMENTS_URL = "comments-url";
+	private final String NODE_DURATION = "duration";
 
 	private String elementValue = null;
 	private Boolean elementOn = false;
@@ -32,23 +35,27 @@ public class ExerciseDataHandler extends DefaultHandler {
 	public void startElement(String uri, String localName, String qName,
 			Attributes attributes) throws SAXException {
 		elementOn = true;
-		if(localName.equals(TAG_EXERCISE))
-			mExerciseItem = new ExerciseItem();
+		if(localName.equals(NODE_EXERCISE))
+			mExerciseItem = new ExerciseItem(attributes.getValue(ATTR_ID));
 	}
 	
 	@Override
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
 		elementOn = false;
-		if(localName.equals(TAG_NAME))
+		if(localName.equals(NODE_NAME))
 			mExerciseItem.setExerciseName(elementValue);
-		else if(localName.equals(TAG_DESCRIPTION))
+		else if(localName.equals(NODE_DESCRIPTION))
 			mExerciseItem.setExerciseDescription(elementValue);
-		else if(localName.equals(TAG_VIDEO_URL))
+		else if(localName.equals(NODE_VIDEO_URL))
 			mExerciseItem.setExerciseVideoURL(elementValue);
-		else if(localName.equals(TAG_AUDIO_URL))
+		else if(localName.equals(NODE_AUDIO_URL))
 			mExerciseItem.setExerciseAudioURL(elementValue);
-		else if(localName.equals(TAG_EXERCISE))
+		else if(localName.equals(NODE_COMMENTS_URL))
+			mExerciseItem.setExerciseCommentURL(elementValue);
+		else if(localName.equals(NODE_DURATION))
+			mExerciseItem.setExerciseSessionTime(elementValue);
+		else if(localName.equals(NODE_EXERCISE))
 			mData.add(mExerciseItem);
 	}
 	

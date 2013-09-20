@@ -6,6 +6,7 @@
         <video-url>knav83ApRLs</video-url>
         <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
         <comments-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</comments-url>
+        <duration>600000</duration>
     </exercise>
     <exercise id="2">
         <name>Bastrika</name>
@@ -13,6 +14,7 @@
         <video-url>knav83ApRLs</video-url>
         <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
         <comments-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</comments-url>
+        <duration>300000</duration>
     </exercise>
     <exercise id="3">
         <name>Nadi Shuddhi Pranayama</name>
@@ -20,6 +22,7 @@
         <video-url>knav83ApRLs</video-url>
         <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
         <comments-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</comments-url>
+        <duration>250000</duration>
     </exercise>
     <exercise id="4">
         <name>Bhramari Pranamaya</name>
@@ -27,5 +30,6 @@
         <video-url>knav83ApRLs</video-url>
         <audio-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</audio-url>
         <comments-url>http://vprbbc.streamguys.net:80/vprbbc24.mp3</comments-url>
+        <duration>900000</duration>
     </exercise>
 </response>

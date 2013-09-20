@@ -32,6 +32,9 @@ public class ExerciseListFragment extends ListFragment implements LoaderCallback
 	private static OnExerciseListItemSelected sDummyCallbacks = new OnExerciseListItemSelected() {
 		@Override
 		public void onListItemSelected(ExerciseItem data) {	}
+
+		@Override
+		public void onStartSessionItemSelected(ExerciseItem data) { }
 	};
 
 	public ExerciseListFragment() {}
@@ -40,6 +43,7 @@ public class ExerciseListFragment extends ListFragment implements LoaderCallback
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		mAdapter = new ExerciseListAdapter(getActivity());
+		mAdapter.setOnExerciseListItemListener(mCallbacks);
 		setListAdapter(mAdapter);
 		setListShown(false);
 		setEmptyText(getString(R.string.no_data));
