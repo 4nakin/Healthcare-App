@@ -2,7 +2,9 @@ package com.example.healthcareapp;
 
 import java.io.IOException;
 
+import com.example.healthcareapp.db.DBAdapter;
 import com.example.healthcareapp.fragments.ExerciseDetailFragment;
+import com.example.healthcareapp.util.AinimationUtils;
 import com.example.healthcareapp.views.SessionResultWindow;
 import com.healthcareapp.IOIyears.R;
 
@@ -16,9 +18,6 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
 import android.widget.PopupWindow.OnDismissListener;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -34,6 +33,8 @@ public class ExerciseSessionActivity extends Activity {
 	private long timeInMilliseconds = 0L, mRecommendedSessionTime = 0L;
 	private boolean isPaused = false;
 	private SessionResultWindow mResultDialog;
+	private DBAdapter mDBAdapter;
+	private AinimationUtils mAnimUtils;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,8 @@ public class ExerciseSessionActivity extends Activity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_action_bar_bg));
 		
+		mAnimUtils = new AinimationUtils();
+		mDBAdapter = new DBAdapter(this);
 		mResultDialog = new SessionResultWindow(this);
 		mFooterFlipper = (ViewFlipper) findViewById(R.id.session_footer_flipper);
 		mMinutes = (TextView) findViewById(R.id.session_process_minutes_text);
@@ -52,11 +55,7 @@ public class ExerciseSessionActivity extends Activity {
 		mRecommendedSessionTime = getIntent().getLongExtra(ExerciseDetailFragment.ARG_SESSION_TIME, 0L);
 		mSessionHandlerText.setText(getProposedTime(mRecommendedSessionTime));
 						
-		final Animation animation = new AlphaAnimation(1, 0); // Change alpha from fully visible to invisible
-	    animation.setDuration(500); // duration - half a second
-	    animation.setInterpolator(new LinearInterpolator()); // do not alter animation rate
-	    animation.setRepeatCount(5); // Repeat animation infinitely
-	    animation.setRepeatMode(Animation.REVERSE); // Reverse animation at the end so the button will fade back in
+		
 		
 	    findViewById(R.id.session_start_btn).setOnClickListener(new OnClickListener() {
 			@Override
@@ -91,22 +90,27 @@ public class ExerciseSessionActivity extends Activity {
 		findViewById(R.id.session_end_btn).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				int sessionScore = getSessionScore(mRecommendedSessionTime, timeInMilliseconds);
 				mFooterFlipper.showPrevious();
 				startTime = pauseStartTime = pauseEndTime = 0L;
 				mSessionTimerHandler.removeCallbacks(updateTimerThread);
-				mMinutes.startAnimation(animation);
-				mSeconds.startAnimation(animation);
+				mMinutes.startAnimation(mAnimUtils.blinkAnim(500, 5));
+				mSeconds.startAnimation(mAnimUtils.blinkAnim(500, 5));
 				mSessionHandlerText.setText(getProposedTime(mRecommendedSessionTime));
-				mResultDialog.setScore(getSessionScore(mRecommendedSessionTime, timeInMilliseconds));
+				mResultDialog.setScore(sessionScore);
 				mResultDialog.showAtLocation(mSessionHandlerText, Gravity.CENTER, 0, 0);
+				mDBAdapter.insertNewScore(
+						getIntent().getStringExtra(ExerciseDetailFragment.ARG_ITEM_ID), 
+						getIntent().getStringExtra(ExerciseDetailFragment.ARG_ITEM_NAME), 
+						sessionScore, timeInMilliseconds);
 			}
 		});
 		
 		mResultDialog.setOnDismissListener(new OnDismissListener() {
 			@Override
 			public void onDismiss() {
-				mMinutes.setText("00");
-				mSeconds.setText("00");
+				mMinutes.setText(R.string.zero);
+				mSeconds.setText(R.string.zero);
 			}
 		});
 	}
@@ -142,6 +146,12 @@ public class ExerciseSessionActivity extends Activity {
 	}
 	
 	@Override
+	protected void onResume() {
+		super.onResume();
+		mDBAdapter.openScoreDB();
+	}
+	
+	@Override
 	public void onStop() {
 		super.onStop();
 		if(mMediaPlayer != null) {
@@ -157,6 +167,7 @@ public class ExerciseSessionActivity extends Activity {
 			mMediaPlayer.release();
 			mMediaPlayer = null;
 		}
+		mDBAdapter.closeScoreDB();
 	}
 	
 	@Override
@@ -166,6 +177,7 @@ public class ExerciseSessionActivity extends Activity {
 			mMediaPlayer.release();
 			mMediaPlayer = null;
 		}
+		mDBAdapter.closeScoreDB();
 	}
 	
 	public void handleStream(boolean isAudio) throws IllegalStateException, IOException {

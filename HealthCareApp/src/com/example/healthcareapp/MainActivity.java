@@ -118,6 +118,7 @@ public class MainActivity extends YouTubeBaseActivity implements
 	public void onListItemSelected(ExerciseItem data) {
 		if (mTwoPane) {
 			Bundle arguments = new Bundle();
+			arguments.putString(ExerciseDetailFragment.ARG_ITEM_ID, data.getExerciseID());
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_NAME, data.getExerciseName());
 			arguments.putString(ExerciseDetailFragment.ARG_VIDEO_URL, data.getExerciseVideoURL());
 			arguments.putString(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION, data.getExerciseDescription());
@@ -130,6 +131,7 @@ public class MainActivity extends YouTubeBaseActivity implements
 		} else {
 			Intent detailIntent = new Intent(this,
 					ExerciseDetailActivity.class);
+			detailIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_ID, data.getExerciseID());
 			detailIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_NAME, data.getExerciseName());
 			detailIntent.putExtra(ExerciseDetailFragment.ARG_VIDEO_URL, data.getExerciseVideoURL());
 			detailIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION, data.getExerciseDescription());
@@ -263,8 +265,12 @@ public class MainActivity extends YouTubeBaseActivity implements
 
 	@Override
 	public void onStartSessionItemSelected(ExerciseItem data) {
-		Intent intent = new Intent(this, ExerciseSessionActivity.class); 
-		intent.putExtra(ExerciseDetailFragment.ARG_SESSION_TIME, data.getExerciseSessionTime());
-		startActivity(intent);
+		Intent sessionIntent = new Intent(this, ExerciseSessionActivity.class); 
+		sessionIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_ID, data.getExerciseID());
+		sessionIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_NAME, data.getExerciseName());
+		sessionIntent.putExtra(ExerciseDetailFragment.ARG_VIDEO_URL, data.getExerciseVideoURL());
+		sessionIntent.putExtra(ExerciseDetailFragment.ARG_ITEM_DESCRIPTION, data.getExerciseDescription());
+		sessionIntent.putExtra(ExerciseDetailFragment.ARG_SESSION_TIME, data.getExerciseSessionTime());
+		startActivity(sessionIntent);
 	}
 }

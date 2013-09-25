@@ -29,7 +29,8 @@ public class ExerciseDetailFragment extends Fragment {
 
 	private final String YOUTUBE_API_KEY = "AIzaSyC9HL3mxOUTalO160976FSUPb-gQv-425E";
 	
-	public static final String ARG_ITEM_NAME = "item_id";
+	public static final String ARG_ITEM_ID = "item_id";
+	public static final String ARG_ITEM_NAME = "item_name";
 	public static final String ARG_VIDEO_URL = "item_url";
 	public static final String ARG_ITEM_DESCRIPTION = "item_description";
 	public static final String ARG_SESSION_TIME = "session_time";
@@ -67,6 +68,10 @@ public class ExerciseDetailFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(getActivity(), ExerciseSessionActivity.class); 
+				intent.putExtra(ExerciseDetailFragment.ARG_ITEM_ID, 
+						getArguments().getString(ExerciseDetailFragment.ARG_ITEM_ID));
+				intent.putExtra(ExerciseDetailFragment.ARG_ITEM_NAME, 
+						getArguments().getString(ExerciseDetailFragment.ARG_ITEM_NAME));
 				intent.putExtra(ExerciseDetailFragment.ARG_SESSION_TIME, 
 						getArguments().getLong(ExerciseDetailFragment.ARG_SESSION_TIME));
 				startActivity(intent);
